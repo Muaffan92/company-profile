@@ -165,7 +165,7 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="<?= base_url('img/illustrasion/illustrasion4.png') ?>" width="400">
-                        <h5 class="card-title mt-3 text-center fw-bold">X-Metrik</h5>
+                        <h5 class="card-title mt-3 text-center fw-bold">X-Metrik Mobile</h5>
                         <p class="card-text fs-7 text-muted">Cukup hanya 1 handphone dapat transaksi all produk dan all operator dapat menjual semua produk pulsa, Token PLN, Voucher Games, Pembayaran PLN Bulanan, Telkom, Internet, TV Cable, Leasing dan lain-lain.</p>
                     </div>
                     <div class="col-md-8">

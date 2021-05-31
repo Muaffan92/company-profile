@@ -15,7 +15,11 @@ class Home extends BaseController
 
 	public function index()
 	{
-		$layouts['menu'] = 'home';
+		$layouts = [
+			'menu' => 'home',
+			'getListTipe' => $this->TableModels->setData('list_tipe', 'nama_tipe', '', '', '', '', '')->getResultArray(),
+			'Modals' => $this->TableModels,
+		];
 
 		$data = [
 			'getListFormat' => $this->TableModels->setData('list_format', '*', ['status' => 1], '', '', '', ['ket' => 'ASC'])->getResultArray(),
@@ -30,7 +34,11 @@ class Home extends BaseController
 
 	public function transaksi()
 	{
-		$layouts['menu'] = 'transaksi';
+		$layouts = [
+			'menu' => 'transaksi',
+			'getListTipe' => $this->TableModels->setData('list_tipe', 'nama_tipe', '', '', '', '', '')->getResultArray(),
+			'Modals' => $this->TableModels,
+		];
 
 		$data = [
 			'getProduct' => $this->TableModels->setData('product', '*', ['status' => 'ada'], '', '', '', '')->getResultArray()
@@ -43,7 +51,11 @@ class Home extends BaseController
 
 	public function profile()
 	{
-		$layouts['menu'] = 'profile';
+		$layouts = [
+			'menu' => 'profile',
+			'getListTipe' => $this->TableModels->setData('list_tipe', 'nama_tipe', '', '', '', '', '')->getResultArray(),
+			'Modals' => $this->TableModels,
+		];
 
 		echo view('Layouts/header', $layouts);
 		echo view('profile');

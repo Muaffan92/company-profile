@@ -9,106 +9,31 @@
             <div class="col">
                 <strong class="fs-5">Kontak Us</strong>
                 <div class="row">
-                    <div class="col">
-                        <strong class="fs-5">Telegram</strong>
-                        <ol class="list-group list-group-numbered">
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="https://telegram.me/XMETRIK7" class="text-decoration-none text-muted">Chanel</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="http://www.telegram.me/xmetrik_telegram_bot" class="text-decoration-none text-muted">Center</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="https://telegram.me/operator_hermanu" class="text-decoration-none text-muted">Customer Services 1</a>
-                                <a href="https://telegram.me/xmetrik_cs" class="text-decoration-none text-muted">Customer Services 2</a>
-                                <a href="http://xmetrik.biz/item.link2" class="text-decoration-none text-muted">Customer Services 3</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="http://www.telegram.me/marketing_hermanu" class="text-decoration-none text-muted">Marketing</a>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="col">
-                        <strong class="fs-5">Marketing</strong>
-                        <ol class="list-group list-group-numbered">
-                            <li class="list-group-item bg-transparent border-0 d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">Marketing Call Center</div>
-                                    +62 821-4183-7327
+                    <?php
+                    foreach ($getListTipe as $ListTipe) {
+                        if (($ListTipe['nama_tipe'] == 'sms') || ($ListTipe['nama_tipe'] == 'telegram') || ($ListTipe['nama_tipe'] == 'whatsapp') || ($ListTipe['nama_tipe'] == 'jabber')) {
+                            $getCenter = $Modals->setData('senter', 'id_senter,tipe,status', ['status' => '1', 'tipe' => $ListTipe['nama_tipe']], '', '', '', '')->getResultArray();
+
+                            // PENGECEKAN DATA KOSONG
+                            if (!empty($getCenter)) {
+                    ?>
+                                <div class="col">
+                                    <strong class="fs-5 text-capitalize"><?= $ListTipe['nama_tipe'] ?></strong>
+                                    <?php
+                                    foreach ($getCenter as $Center) {
+                                    ?>
+                                        <ol class="list-group list-group-numbered">
+                                            <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
+                                        </ol>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0 d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">WhatsApp Marketing Center</div>
-                                    +62 821-4183-7327
-                                </div>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0 d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">GTALK Center</div>
-                                    xmetrikh2h@gmail.com
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="col">
-                        <strong class="fs-5">Call</strong>
-                        <ol class="list-group list-group-numbered">
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="tel:+62 85 2345 6986 3" class="text-decoration-none text-muted">Telkomsel</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="tel:+62 85 6492 4730 1" class="text-decoration-none text-muted">Indosat</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="tel:+62 81 9397 3631 2" class="text-decoration-none text-muted">XL</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="tel:+62 89 6640 2738 6" class="text-decoration-none text-muted">Three</a>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="col">
-                        <strong class="fs-5">SMS</strong>
-                        <ol class="list-group list-group-numbered">
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="sms:+62 85 23456 9858" class="text-decoration-none text-muted">Telkomsel</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="sms:+62 856 5570 808 8" class="text-decoration-none text-muted">Im3</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="sms:+62 81 805 61 523 0" class="text-decoration-none text-muted">XL</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="sms:+62 896 8190 996 9" class="text-decoration-none text-muted">Three</a>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0">
-                                <a href="sms:+62 838 3387 739 0" class="text-decoration-none text-muted">Axis</a>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="col">
-                        <strong class="fs-5">Jabber/Xmpp</strong>
-                        <ol class="list-group list-group-numbered">
-                            <li class="list-group-item bg-transparent border-0 d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">Jabber Domain Xmetrik Pulsa</div>
-                                    xcenter1@metrikpulsa.com
-                                    xcenter2@metrikpulsa.com
-                                    xcenter3@metrikpulsa.com
-                                </div>
-                            </li>
-                            <li class="list-group-item bg-transparent border-0 d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">Jabber Domain Xmetrik.biz</div>
-                                    xmetrikh2h@xmetrik.biz
-                                    xmetrikdepo@xmetrik.biz
-                                    xmetrikprob@xmetrik.biz
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
+                    <?php
+                            }
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <?php if ($menu == 'home') {
@@ -120,7 +45,7 @@
                             <a class="nav-link text-muted active" href="#start">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-muted" href="#figure">Fiture</a>
+                            <a class="nav-link text-muted" href="#fiture">Fiture</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-muted" href="#operator">Operator</a>
