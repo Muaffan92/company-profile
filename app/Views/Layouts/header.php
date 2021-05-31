@@ -37,7 +37,7 @@
                                             } ?>" href="<?= base_url('Home/profile') ?>">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn-light rounded-pill text-primary pe-3 ps-3 fw-bold" href="#">Login</a>
+                        <a class="nav-link btn-light rounded-pill text-center text-primary pe-3 ps-3 fw-bold" href="#">Login</a>
                     </li>
                 </ul>
             </div>

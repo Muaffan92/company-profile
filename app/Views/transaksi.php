@@ -1,7 +1,7 @@
 <div class="bg-primary">
-    <div class="container">
-        <div class="w-100 h-100 row pb-5">
-            <div class="col-6 d-flex align-items-center">
+    <div class="container pb-5 pt-3 pb-lg-0 pt-lg-0">
+        <div class="w-100 h-100 row pb-lg-5">
+            <div class="col-lg-6 d-flex align-items-center mt-5 mt-lg-0">
                 <div class="d-block">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -12,7 +12,7 @@
                     <strong class="text-white fs-1">Transaksi</strong>
                 </div>
             </div>
-            <div class="col-6 mt-5">
+            <div class="col-lg-6 d-none d-lg-block mt-5">
                 <img src="<?= base_url('img/illustrasion/illustrasion7.png') ?>" height="300" class="float-end">
             </div>
         </div>

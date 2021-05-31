@@ -1,7 +1,7 @@
     <div class="bg-primary">
-        <div class="container">
+        <div class="container pb-5 pt-3 pb-lg-0 pt-lg-0">
             <div class="w-100 h-100 row">
-                <div class="col-6 mt-auto">
+                <div class="col-lg-6 mt-lg-auto mt-5">
                     <strong class="text-white fs-1">Hidup Lebih Untung dengan Bergabung Menjadi Mitra/Agen Kami</strong>
                     <div class="text-white-50 fs-5">
                         Pendapatan Menarik dari <strong>X-Metrik</strong>
@@ -13,21 +13,21 @@
                         </svg>
                     </a>
                 </div>
-                <div class="col-6 mt-5">
-                    <img src="<?= base_url('img/illustrasion/illustrasion1.png') ?>" height="350" class="float-end">
+                <div class="col-lg-6 d-none d-lg-block mt-5">
+                    <img src="<?= base_url('img/illustrasion/illustrasion1.png') ?>" class="float-end h-100">
                 </div>
             </div>
         </div>
     </div>
-    <img src="<?= base_url('img/shape_Dividers.png') ?>" class="w-100">
+    <img src="<?= base_url('img/shape_Dividers.png') ?>" class="w-100" id="shape_Dividers">
 
     <!-- HOME -->
     <div class="container mt-5" id="start">
         <h1 class="fw-bold text-primary text-center mb-5">Kenapa Harus X-Metrik?</h1>
         <div class="row text-center">
-            <div class="col-4">
+            <div class="col-lg-4">
                 <div class="row">
-                    <div class="col-12 mb-5 h-100">
+                    <div class="col-12 mb-lg-5 h-100">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-phone mb-2" viewBox="0 0 16 16">
                             <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
                             <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 d-flex align-items-center">
+            <div class="col-lg-4 d-lg-flex align-items-center">
                 <div class="d-block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart mb-2" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -63,9 +63,9 @@
                     </p>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4">
                 <div class="row">
-                    <div class="col-12 mb-5 h-100">
+                    <div class="col-12 mb-lg-5 h-100">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-wallet mb-2" viewBox="0 0 16 16">
                             <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z" />
                         </svg>
@@ -100,10 +100,10 @@
             <div class="card border-0 mb-5 w-100">
                 <div class="row g-0">
                     <div class="col-md-4 text-center">
-                        <img src="<?= base_url('img/illustrasion/illustrasion3.png') ?>" width="400">
+                        <img src="<?= base_url('img/illustrasion/illustrasion3.png') ?>" class="w-100">
                         <h5 class="card-title fw-bold mt-3">Format Transaksi</h5>
                     </div>
-                    <div class="col-md-8 overflow-auto" style="height: 348px;">
+                    <div class="col-md-8 overflow-height" style="height: 348px;">
                         <div class="card-body">
                             <ol class="list-group list-group-numbered">
                                 <?php
@@ -130,7 +130,7 @@
             <!-- BANK -->
             <div class="card mb-5 w-100 border-0">
                 <div class="row g-0">
-                    <div class="col-md-8 overflow-auto" style="height: 348px;">
+                    <div class="col-md-8 overflow-height" style="height: 348px;">
                         <div class="card-body">
                             <ol class="list-group list-group-numbered">
                                 <?php
@@ -153,7 +153,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
-                        <img src="<?= base_url('img/illustrasion/illustrasion6.png') ?>" width="400">
+                        <img src="<?= base_url('img/illustrasion/illustrasion6.png') ?>" class="w-100">
                         <h5 class="card-title fw-bold mt-3">Bank</h5>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
             <div class="card mb-5 w-100 border-0">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="<?= base_url('img/illustrasion/illustrasion4.png') ?>" width="400">
+                        <img src="<?= base_url('img/illustrasion/illustrasion4.png') ?>" class="w-100">
                         <h5 class="card-title mt-3 text-center fw-bold">X-Metrik Mobile</h5>
                         <p class="card-text fs-7 text-muted">Cukup hanya 1 handphone dapat transaksi all produk dan all operator dapat menjual semua produk pulsa, Token PLN, Voucher Games, Pembayaran PLN Bulanan, Telkom, Internet, TV Cable, Leasing dan lain-lain.</p>
                     </div>
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <img src="<?= base_url('img/illustrasion/illustrasion5.png') ?>" width="400">
+                        <img src="<?= base_url('img/illustrasion/illustrasion5.png') ?>" class="w-100">
                         <h5 class="card-title text-center mt-3 fw-bold">X-Metrik H2H</h5>
                         <p class="card-text fs-7 text-muted">Layanan Host to Host yang disediakan untuk mitra kami yang sudah memiliki software PPOB (Payment Point Online Bank).</p>
                     </div>
@@ -232,34 +232,34 @@
         <h1 class="fw-bold text-primary text-center mb-5">Kegiatan</h1>
         <div class="row">
             <div class="col">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
-            <div class="col">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+            <div class="col mt-4 mt-lg-0">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
-            <div class="col">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+            <div class="col mt-4 mt-lg-0">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
-            <div class="col">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+            <div class="col mt-4 mt-lg-0">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
-            <div class="col">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
-            </div>
-            <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+            <div class="col mt-4 mt-lg-0">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
             <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
             <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
             <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
             <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+            </div>
+            <div class="col mt-4">
+                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
             </div>
         </div>
     </div>

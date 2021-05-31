@@ -10,14 +10,25 @@
 }
 
 .container .nav-pills .nav-link.active {
-    color: #0d6efd!important;
-    background-color: white;
+  color: #0d6efd !important;
+  background-color: white;
 }
 
 .h-12 {
-  height: 12%!important;
+  height: 12% !important;
 }
 
 .fs-7 {
-  font-size: 0.85rem!important;
+  font-size: 0.85rem !important;
+}
+
+.overflow-height {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+@media (max-width: 360px) {
+  #shape_Dividers {
+    margin-top: -2px;
+  }
 }

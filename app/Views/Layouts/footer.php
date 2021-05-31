@@ -2,11 +2,11 @@
 <div class="bg-light">
     <div class="container mt-5 pt-3 pb-3">
         <div class="row fs-7">
-            <div class="col-2">
+            <div class="col-lg-2">
                 <strong class="fs-5">X-Metrik</strong>
                 <p class=" text-muted fs-7">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea voluptatum possimus non et similique, deserunt unde illum numquam adipisci repellendus, eius, quod sequi quis voluptas! Autem laborum perspiciatis quas possimus? Repudiandae, adipisci optio. Consectetur, animi. Eligendi vitae, autem nam hic, perferendis sit reiciendis vero eum ratione, voluptate voluptates nulla blanditiis?</p>
             </div>
-            <div class="col">
+            <div class="col-lg">
                 <strong class="fs-5">Kontak Us</strong>
                 <div class="row">
                     <?php
@@ -17,7 +17,7 @@
                             // PENGECEKAN DATA KOSONG
                             if (!empty($getCenter)) {
                     ?>
-                                <div class="col">
+                                <div class="col-lg">
                                     <strong class="fs-5 text-capitalize"><?= $ListTipe['nama_tipe'] ?></strong>
                                     <?php
                                     foreach ($getCenter as $Center) {
@@ -38,7 +38,7 @@
             </div>
             <?php if ($menu == 'home') {
             ?>
-                <div class="col-2">
+                <div class="col-lg-2">
                     <strong class="fs-5">Menu</strong>
                     <ul class="nav flex-column">
                         <li class="nav-item">
