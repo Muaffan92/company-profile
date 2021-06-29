@@ -27,9 +27,9 @@ class Home extends BaseController
 			'getOperator' => $this->TableModels->setData('operator', '*', '', '', '', '', '')->getResultArray(),
 		];
 
-		echo view('Layouts/header', $layouts);
-		echo view('index', $data);
-		echo view('Layouts/footer');
+		echo view('profile/Layouts/header', $layouts);
+		echo view('profile/index', $data);
+		echo view('profile/Layouts/footer');
 	}
 
 	public function transaksi()
@@ -44,9 +44,9 @@ class Home extends BaseController
 			'getProduct' => $this->TableModels->setData('product', '*', ['status' => 'ada'], '', '', '', '')->getResultArray()
 		];
 
-		echo view('Layouts/header', $layouts);
-		echo view('transaksi', $data);
-		echo view('Layouts/footer');
+		echo view('profile/Layouts/header', $layouts);
+		echo view('profile/transaksi', $data);
+		echo view('profile/Layouts/footer');
 	}
 
 	public function profile()
@@ -57,8 +57,8 @@ class Home extends BaseController
 			'Modals' => $this->TableModels,
 		];
 
-		echo view('Layouts/header', $layouts);
-		echo view('profile');
-		echo view('Layouts/footer');
+		echo view('profile/Layouts/header', $layouts);
+		echo view('profile/profile');
+		echo view('profile/Layouts/footer');
 	}
 }

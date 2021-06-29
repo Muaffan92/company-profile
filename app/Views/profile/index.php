@@ -22,7 +22,7 @@
     <img src="<?= base_url('img/shape_Dividers.png') ?>" class="w-100" id="shape_Dividers">
 
     <!-- HOME -->
-    <div class="container mt-5" id="start">
+    <div class="container mt-5 pt-5" id="start">
         <h1 class="fw-bold text-primary text-center mb-5">Kenapa Harus X-Metrik?</h1>
         <div class="row text-center">
             <div class="col-lg-4">
@@ -228,39 +228,121 @@
     <!-- END OPERATOR -->
 
     <!-- KEGIATAN -->
-    <div class="container mt-5" id="kegiatan">
+    <div class="container mt-5 pt-5" id="kegiatan">
         <h1 class="fw-bold text-primary text-center mb-5">Kegiatan</h1>
-        <div class="row">
-            <div class="col">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4 mt-lg-0">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                        <div class="col mt-4">
+                            <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col mt-4 mt-lg-0">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
-            <div class="col mt-4 mt-lg-0">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
-            <div class="col mt-4 mt-lg-0">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
-            <div class="col mt-4 mt-lg-0">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
-            <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
-            <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
-            <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
-            <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
-            <div class="col mt-4">
-                <img src="<?= base_url('img/default.jpg') ?>" width="200" height="200" class="mx-auto d-block">
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
     <!-- END KEGIATAN -->
