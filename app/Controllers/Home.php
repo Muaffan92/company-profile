@@ -15,50 +15,25 @@ class Home extends BaseController
 
 	public function index()
 	{
-		$layouts = [
-			'menu' => 'home',
-			'getListTipe' => $this->TableModels->setData('list_tipe', 'nama_tipe', '', '', '', '', '')->getResultArray(),
+		$header = [
+			'menu' => 'beranda',
+			'getMenu' => $this->TableModels->setData('menu', '*', '', '', '', '', '')->getResultArray(),
+			'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*', '', '', '', '', '')->getResultArray(),
+			'getSosmed' => $this->TableModels->setData('sosmed', '*', '', '', '', '', '')->getResultArray(),
 			'Modals' => $this->TableModels,
 		];
 
 		$data = [
-			'getListFormat' => $this->TableModels->setData('list_format', '*', ['status' => 1], '', '', '', ['ket' => 'ASC'])->getResultArray(),
-			'getBank' => $this->TableModels->setData('bank', '*', ['status' => '0'], '', '', '', '')->getResultArray(),
+			'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $header['menu']], '', '', '', '')->getRowArray(),
+			'getInfo' => $this->TableModels->setData('info', '*', '', '', '', '', '')->getResultArray(),
+			'getMitra' => $this->TableModels->setData('mitra', '*', '', '', '', '', '')->getResultArray(),
+			'getSupport' => $this->TableModels->setData('support', '*', '', '', '', '', '')->getResultArray(),
 			'getOperator' => $this->TableModels->setData('operator', '*', '', '', '', '', '')->getResultArray(),
+			'getKegiatan' => $this->TableModels->setData('kegiatan', '*', '', '', '', '', '')->getResultArray(),
 		];
 
-		echo view('profile/Layouts/header', $layouts);
-		echo view('profile/index', $data);
-		echo view('profile/Layouts/footer');
-	}
-
-	public function transaksi()
-	{
-		$layouts = [
-			'menu' => 'transaksi',
-			'getListTipe' => $this->TableModels->setData('list_tipe', 'nama_tipe', '', '', '', '', '')->getResultArray(),
-			'Modals' => $this->TableModels,
-		];
-
-		$data = [
-			'getProduct' => $this->TableModels->setData('product', '*', ['status' => 'ada'], '', '', '', '')->getResultArray()
-		];
-
-		echo view('profile/Layouts/header', $layouts);
-		echo view('profile/transaksi', $data);
-		echo view('profile/Layouts/footer');
-	}
-
-	public function profile()
-	{
-		$layouts = [
-			'menu' => 'profile',
-			'getListTipe' => $this->TableModels->setData('list_tipe', 'nama_tipe', '', '', '', '', '')->getResultArray(),
-			'Modals' => $this->TableModels,
-		];
-
-		echo view('profile/Layouts/header', $layouts);
-		echo view('profile/profile');
-		echo view('profile/Layouts/footer');
+		echo view('company_profile/Layouts/header', $header);
+		echo view('company_profile/index', $data);
+		echo view('company_profile/Layouts/footer');
 	}
 }
