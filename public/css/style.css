@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,386;0,400;1,600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Public Sans", sans-serif;
 }
 
 /*css3 design scrollbar*/
@@ -18,6 +20,15 @@
   height: 12% !important;
 }
 
+.box {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.h-45px {
+  height: 45px;
+}
+
 .fs-7 {
   font-size: 0.85rem !important;
 }
@@ -27,8 +38,78 @@
   overflow-y: auto !important;
 }
 
-@media (max-width: 360px) {
-  #shape_Dividers {
-    margin-top: -2px;
-  }
+.rounded-top-5 {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.rounded-top-4 {
+  border-top-left-radius: 95px;
+  border-top-right-radius: 95px;
+}
+
+.rounded-end-pill {
+  border-top-right-radius: 50rem !important;
+  border-bottom-right-radius: 50rem !important;
+}
+
+.rounded-start-pill {
+  border-top-left-radius: 50rem !important;
+  border-bottom-left-radius: 50rem !important;
+}
+
+.rounded-4 {
+  border-radius: 30px !important;
+}
+
+.mb-6 {
+  margin-bottom: 6rem !important;
+}
+
+.mt-6 {
+  margin-top: 15rem !important;
+}
+
+.mt-7 {
+  margin-top: 20rem !important;
+}
+
+.me-6 {
+  margin-right: 10rem !important;
+}
+
+.ms-6 {
+  margin-left: 10rem !important;
+}
+
+.ty-2 {
+  transform: translateY(-15.5rem) !important;
+}
+
+.ty-1 {
+  transform: translateY(-18.5rem) !important;
+}
+
+.txe-1 {
+  transform: translateX(13rem) !important;
+}
+
+.txs-1 {
+  transform: translateX(-13rem) !important;
+}
+
+.o-1 {
+  opacity: 0.9 !important;
+}
+
+.text-darkpurple {
+  color: #9400d3 !important;
+}
+
+.border-20 {
+  border-width: 20px !important;
+}
+
+.border-notImportant {
+    border: 1px solid #dee2e6;
 }
