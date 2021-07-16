@@ -16,7 +16,7 @@
                                     if ($Menu['kategori'] == $KategoriMenu['nama']) {
                             ?>
                                         <li class="nav-item">
-                                            <a class="nav-link text-muted text-capitalize" href="<?= base_url($Menu['link']) ?>"><?= $Menu['menu'] ?></a>
+                                            <a class="nav-link text-muted text-capitalize" href="<?= $Menu['link'] ?>"><?= $Menu['menu'] ?></a>
                                         </li>
                             <?php
                                     }
