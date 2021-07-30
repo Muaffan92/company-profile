@@ -51,7 +51,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                 if ($jml_limit <= 6) {
                                             ?>
                                                     <div class="col d-flex align-items-center justify-content-center">
-                                                        <img src="<?= base_url('img/' . $getSupport[$a]['operator'] . '.png') ?>" alt="operator <?= $getSupport[$a]['operator'] ?>" class="d-block text-muted" width="100">
+                                                        <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="operator <?= $getSupport[$a]['operator'] ?>" class="d-block text-muted" width="100">
                                                     </div>
                                             <?php
                                                     $limit = $a;
@@ -72,7 +72,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                 if ($jml_limit <= 6) {
                                             ?>
                                                     <div class="col d-flex align-items-center justify-content-center">
-                                                        <img src="<?= base_url('img/' . $getSupport[$a]['operator'] . '.png') ?>" alt="operator <?= $getSupport[$a]['operator'] ?>" class="d-block text-muted" width="100">
+                                                        <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="operator <?= $getSupport[$a]['operator'] ?>" class="d-block text-muted" width="100">
                                                     </div>
                                             <?php
                                                     $limit = $a;
@@ -368,7 +368,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                     <div class="ms-2 me-auto">
                                         <div class="fw-bold fs-5">1. Pilih media transaksi kamu</div>
                                         <p class="text-black-50 fs-7 ps-4">Pilih media yang ingin kamu gunakan dan sesuai dengan, yang bisa kamu gunakan.</p>
-                                        <a href="<?= base_url('Help/contact#center') ?>" class="text-decoration-none btn badge btn-success ms-4">
+                                        <a href="<?= base_url('Contact#center') ?>" class="text-decoration-none btn badge btn-success ms-4">
                                             Lihat media
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />

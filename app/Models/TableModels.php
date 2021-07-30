@@ -12,7 +12,7 @@ class TableModels extends Model
             ->select($column);
     }
 
-    public function setData($table, $column, $where, $wherein, $like, $groupby, $orderBy)
+    public function setData($table, $column, $where = '', $wherein = [], $like = '', $groupby = '', $orderBy = [])
     {
         $this->getData($table, $column);
         if (!empty($where)) {
