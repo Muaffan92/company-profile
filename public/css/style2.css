@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.navigation {
+  width: 225px;
+  box-sizing: initial;
+  transition: width 0.5s;
+  border-top-right-radius: 20px;
+}
+
+.navigation ul {
+  padding-left: 5px;
+  padding-top: 40px;
+}
+
+.navigation ul li {
+  list-style: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.navigation ul li b:nth-child(1) {
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 100%;
+  background: #cff4fc;
+  display: none;
+}
+
+.navigation ul li b:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 20px;
+  background: #0d6efd;
+}
+
+.navigation ul li b:nth-child(2) {
+  position: absolute;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  background: #cff4fc;
+  display: none;
+}
+
+.navigation ul li b:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  background: #0d6efd;
+}
+
+.navigation ul li.active {
+  background: #cff4fc;
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
+  display: block;
+}
+
+.navigation ul li a .icon {
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.navigation ul li.active a {
+  color: #333 !important;
+}
+
+.navigation ul li a .title {
+  padding-left: 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: normal;
+}
+
+.navigation ul li.active .sub_menu {
+  display: block !important;
+  transition: all 0.3s ease;
+}
+
+.navigation ul li.active.menu_sub_menu {
+  padding-bottom: 1rem;
+}
+
+.navigation ul li.active .sub_menu a {
+  color: #fff !important;
+}
+
+.main-content {
+  margin-left: 240px;
+  overflow-x: hidden;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+}
+
+.overflow-horizontal {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.h-80 {
+  height: 80% !important;
+}
+
+.start-auto {
+  left: auto !important;
+}
+
+.rounded-end-pill {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.w-83 {
+  width: 83% !important;
+}
+
+.z-index-1 {
+  z-index: 1 !important;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}

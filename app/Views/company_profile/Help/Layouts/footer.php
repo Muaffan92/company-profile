@@ -40,7 +40,7 @@
         </div>
 
         <hr class="border border-secondary">
-        
+
         <div class="p-3 d-flex align-items-center justify-content-between">
             <div id="sosial_media" class="w-100">
                 <div class="row">
@@ -52,7 +52,7 @@
                             for ($i = 0; $i < count($getSosmed); $i++) {
                                 if ($i <= 4) {
                             ?>
-                                    <a href="<?= $getSosmed[$i]['link'] ?>" class="me-2 <?= $getSosmed[$i]['color'] ?> text-decoration-none">
+                                    <a href="<?= $getSosmed[$i]['link'] ?>" class="me-2 text-decoration-none" style="color: #<?= $getSosmed[$i]['color'] ?> !important;">
                                         <?= $getSosmed[$i]['icon'] ?>
                                     </a>
                             <?php

@@ -76,7 +76,7 @@ if (!empty($getCabang)) {
                         } else {
                         ?>
                             <div class="col-lg-6 mt-4">
-                                <div class="card rounded-4 h-100">
+                                <div class="card rounded-4 h-100 shadow">
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold fs-4"><?= $cabang['nama'] ?></h5>
                                         <p class="card-text"><?= $cabang['alamat'] ?></p>
@@ -124,119 +124,121 @@ if (!empty($getCabang)) {
 // PENGECEKAN DATA KOSONG
 if (!empty($getListTipe)) {
 ?>
-    <section class="bg-info" id="center">
-        <div class="container pb-4 pt-4">
-            <div class="w-100 h-100 p-4 text-white">
-                <h1 class="fw-bold text-center mb-5">Center</h1>
-                <div id="center" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <?php
-                        // PEMBAGIAN JUMLAH
-                        $jml_center = ceil(count($getListTipe) / 4);
-                        // DATA TERAKHIR
-                        $end = 0;
-
-                        // MENAMPILKAN JUMLAH PEMBAGIAN
-                        for ($lt = 0; $lt < $jml_center; $lt++) {
-                            // PENGECEKAN DATA PERTAMA
-                            if ($lt == 0) {
-                        ?>
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <?php
-                                        // MEMBERIKAN LIMIT
-                                        $limit_center = 1;
-
-                                        for ($lst = 0; $lst < count($getListTipe); $lst++) {
-                                            // MENAMPILKAN DATA
-                                            $tmp_center = $Modals->setData('center', '*', ['tipe' => $getListTipe[$lst]['nama_tipe']], ['status' => ['1']], '', '', '')->getResultArray();
-
-                                            if (!empty($tmp_center)) {
-                                                if ($limit_center <= 4) {
-                                        ?>
-                                                    <div class="col-lg">
-                                                        <div class="card alert-info border-0 shadow-lg h-100">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
-                                                                <div class="card-text">
-                                                                    <ul class="list-group">
-                                                                        <?php
-                                                                        foreach ($tmp_center as $Center) {
-                                                                        ?>
-                                                                            <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
-                                                                        <?php
-                                                                        }
-                                                                        ?>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                        <?php
-                                                    $end = $lst;
-                                                    $limit_center++;
-                                                }
-                                            }
-                                        }
-                                        ?>
-                                    </div>
-                                </div>
+    <section class="bg-white" id="center">
+        <div class="bg-info rounded-top-4">
+            <div class="container pb-4 pt-4">
+                <div class="w-100 h-100 p-4 text-white">
+                    <h1 class="fw-bold text-center mb-5">Center</h1>
+                    <div id="center" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
                             <?php
-                            } else {
-                            ?>
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <?php
-                                        // MEMBERIKAN LIMIT
-                                        $limit_center = 1;
+                            // PEMBAGIAN JUMLAH
+                            $jml_center = ceil(count($getListTipe) / 4);
+                            // DATA TERAKHIR
+                            $end = 0;
 
-                                        for ($lst = $end + 1; $lst < count($getListTipe); $lst++) {
-                                            // MENAMPILKAN DATA
-                                            $tmp_center = $Modals->setData('center', '*', ['tipe' => $getListTipe[$lst]['nama_tipe']], ['status' => ['1']], '', '', '')->getResultArray();
-                                            
-                                            if (!empty($tmp_center)) {
-                                                if ($limit_center <= 4) {
-                                        ?>
-                                                    <div class="col-lg">
-                                                        <div class="card alert-info border-0 shadow-lg h-100">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
-                                                                <div class="card-text">
-                                                                    <ul class="list-group">
-                                                                        <?php
-                                                                        foreach ($tmp_center as $Center) {
-                                                                        ?>
-                                                                            <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
-                                                                        <?php
-                                                                        }
-                                                                        ?>
-                                                                    </ul>
+                            // MENAMPILKAN JUMLAH PEMBAGIAN
+                            for ($lt = 0; $lt < $jml_center; $lt++) {
+                                // PENGECEKAN DATA PERTAMA
+                                if ($lt == 0) {
+                            ?>
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <?php
+                                            // MEMBERIKAN LIMIT
+                                            $limit_center = 1;
+
+                                            for ($lst = 0; $lst < count($getListTipe); $lst++) {
+                                                // MENAMPILKAN DATA
+                                                $tmp_center = $Modals->setData('center', '*', ['tipe' => $getListTipe[$lst]['nama_tipe']], ['status' => ['1']], '', '', '')->getResultArray();
+
+                                                if (!empty($tmp_center)) {
+                                                    if ($limit_center <= 4) {
+                                            ?>
+                                                        <div class="col-lg">
+                                                            <div class="card alert-info border-0 shadow-lg h-100">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
+                                                                    <div class="card-text">
+                                                                        <ul class="list-group">
+                                                                            <?php
+                                                                            foreach ($tmp_center as $Center) {
+                                                                            ?>
+                                                                                <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                        </ul>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                        <?php
-                                                    $end = $lst;
-                                                    $limit_center++;
+                                            <?php
+                                                        $end = $lst;
+                                                        $limit_center++;
+                                                    }
                                                 }
                                             }
-                                        }
-                                        ?>
+                                            ?>
+                                        </div>
                                     </div>
-                                </div>
-                        <?php
+                                <?php
+                                } else {
+                                ?>
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <?php
+                                            // MEMBERIKAN LIMIT
+                                            $limit_center = 1;
+
+                                            for ($lst = $end + 1; $lst < count($getListTipe); $lst++) {
+                                                // MENAMPILKAN DATA
+                                                $tmp_center = $Modals->setData('center', '*', ['tipe' => $getListTipe[$lst]['nama_tipe']], ['status' => ['1']], '', '', '')->getResultArray();
+
+                                                if (!empty($tmp_center)) {
+                                                    if ($limit_center <= 4) {
+                                            ?>
+                                                        <div class="col-lg">
+                                                            <div class="card alert-info border-0 shadow-lg h-100">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
+                                                                    <div class="card-text">
+                                                                        <ul class="list-group">
+                                                                            <?php
+                                                                            foreach ($tmp_center as $Center) {
+                                                                            ?>
+                                                                                <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            <?php
+                                                        $end = $lst;
+                                                        $limit_center++;
+                                                    }
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
                             }
-                        }
-                        ?>
+                            ?>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#center" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#center" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#center" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#center" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -245,3 +247,104 @@ if (!empty($getListTipe)) {
 }
 ?>
 <!-- END CENTER -->
+
+<!-- BANK -->
+<?php
+// PENGECEKAN DATA KOSONG
+if (!empty($getBank)) {
+?>
+    <section class="bg-info" id="bank">
+        <div class="bg-danger rounded-top-4">
+            <div class="container pb-4 pt-4">
+                <div class="w-100 h-100 p-4 text-white">
+                    <h1 class="fw-bold text-center mb-5">Bank</h1>
+                    <div id="bank" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <?php
+                            // PEMBAGIAN JUMLAH
+                            $jml_bank = ceil(count($getBank) / 4);
+                            // DATA TERAKHIR
+                            $end = 0;
+
+                            // MENAMPILKAN JUMLAH PEMBAGIAN
+                            for ($bnk = 0; $bnk < $jml_bank; $bnk++) {
+                                // PENGECEKAN DATA PERTAMA
+                                if ($bnk == 0) {
+                            ?>
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <?php
+                                            // MEMBERIKAN LIMIT
+                                            $limit_bank = 1;
+
+                                            for ($gtbnk = 0; $gtbnk < count($getBank); $gtbnk++) {
+                                                if ($limit_bank <= 4) {
+                                            ?>
+                                                    <div class="col-lg">
+                                                        <div class="card bg-white shadow border-0 shadow-lg h-100">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title fw-bold text-capitalize text-center text-dark"><?= $getBank[$gtbnk]['bank'] ?></h5>
+                                                                <h6 class="card-subtitle mb-2 text-muted"><?= $getBank[$gtbnk]['atas_nama'] ?></h6>
+                                                                <p class="card-text text-dark"><?= $getBank[$gtbnk]['no_rek'] ?></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            <?php
+                                                    $end = $gtbnk;
+                                                    $limit_bank++;
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                <?php
+                                } else {
+                                ?>
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <?php
+                                            // MEMBERIKAN LIMIT
+                                            $limit_bank = 1;
+
+                                            for ($gtbnk = $end + 1; $gtbnk < count($getBank); $gtbnk++) {
+                                                if ($limit_bank <= 4) {
+                                            ?>
+                                                    <div class="col-lg">
+                                                        <div class="card bg-white shadow border-0 shadow-lg h-100">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title fw-bold text-capitalize text-center text-dark"><?= $getBank[$gtbnk]['bank'] ?></h5>
+                                                                <h6 class="card-subtitle mb-2 text-muted"><?= $getBank[$gtbnk]['atas_nama'] ?></h6>
+                                                                <p class="card-text text-dark"><?= $getBank[$gtbnk]['no_rek'] ?></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            <?php
+                                                    $end = $gtbnk;
+                                                    $limit_bank++;
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#bank" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#bank" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php
+}
+?>
+<!-- END BANK -->
