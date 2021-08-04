@@ -28,157 +28,69 @@ if (!empty($getInfoHeader)) {
 ?>
 
 <!-- FAQ -->
-<section class="bg-white">
-    <div class="container pb-5 pt-4 pb-lg-0 pt-lg-0 mt-5 mb-5">
-        <div class="w-100 h-100">
-            <h1 class="fw-bold mb-5">Yang paling di cari</h1>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <p class="card-text p-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+<?php
+if (!empty($getHelp)) {
+?>
+    <section class="bg-white">
+        <div class="container pb-5 pt-4 pb-lg-0 pt-lg-0 mt-5 mb-5">
+            <div class="w-100 h-100">
+                <h1 class="fw-bold mb-5">Yang paling di cari</h1>
+                <div class="row">
+                    <?php
+                    $i = 1;
+                    foreach ($getHelp as $Help) {
+                        if ($i <= 2) {
+                    ?>
+                            <div class="col-lg-6">
+                                <div class="card rounded-4">
+                                    <div class="row g-0">
+                                        <div class="col-md-10">
+                                            <div class="card-body">
+                                                <p class="card-text p-3"><?= $Help['help'] ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 d-flex align-items-center">
+                                            <a href="<?= base_url('Help/' . $Help['id']) ?>" class="text-decoration-none btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <a href="#" class="text-decoration-none btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <p class="card-text p-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <?php
+                        } else {
+                        ?>
+                            <div class="col-lg-6 mt-4">
+                                <div class="card rounded-4">
+                                    <div class="row g-0">
+                                        <div class="col-md-10">
+                                            <div class="card-body">
+                                                <p class="card-text p-3"><?= $Help['help'] ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 d-flex align-items-center">
+                                            <a href="<?= base_url('Help/' . $Help['id']) ?>" class="text-decoration-none btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <a href="#" class="text-decoration-none btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-4">
-                    <div class="card rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <p class="card-text p-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <a href="#" class="text-decoration-none btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-4">
-                    <div class="card rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <p class="card-text p-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <a href="#" class="text-decoration-none btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-4">
-                    <div class="card rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <p class="card-text p-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <a href="#" class="text-decoration-none btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-4">
-                    <div class="card rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <p class="card-text p-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <a href="#" class="text-decoration-none btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-4">
-                    <div class="card rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <p class="card-text p-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <a href="#" class="text-decoration-none btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-4">
-                    <div class="card rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <p class="card-text p-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <a href="#" class="text-decoration-none btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        }
+
+                        $i++;
+                    }
+                    ?>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php
+}
+?>
 <!-- END FAQ -->

@@ -119,7 +119,7 @@ if (!empty($getProfesi)) {
 
 <!-- KEUNTUNGAN -->
 <?php
-if (!empty($getKeungguan)) {
+if (!empty($getKeunggulan)) {
 ?>
     <section class="bg-dark rounded-top-4">
         <div class="container pt-5 pb-5 text-center">
