@@ -3,7 +3,7 @@
         Center
     </div>
     <div class="ms-auto bg-white shadow me-5 rounded-3">
-        <a href="<?= base_url('BaseCamp/add_center') ?>" class="btn badge text-success fw-bold">
+        <a href="<?= base_url('Camp/add_center') ?>" class="btn badge text-success fw-bold">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
             </svg>
@@ -40,8 +40,8 @@
                                 </div>
                             </td>
                             <td>
-                                <a href="<?= base_url('BaseCamp/edit_center/' . $Center['id_modem']) ?>" class="btn badge bg-warning rounded-pill">Edit</a>
-                                <a href="<?= base_url('BaseCamp/delete_center/' . $Center['id_modem']) ?>" class="btn badge bg-danger rounded-pill">Hapus</a>
+                                <a href="<?= base_url('Camp/edit_center/' . $Center['id_modem']) ?>" class="btn badge bg-warning rounded-pill">Edit</a>
+                                <a href="<?= base_url('Camp/delete_center/' . $Center['id_modem']) ?>" class="btn badge bg-danger rounded-pill">Hapus</a>
                             </td>
                         </tr>
                 <?php
@@ -77,7 +77,7 @@
             if (value) {
                 // AJAX
                 $.ajax({
-                    url: '<?= base_url('BaseCamp/update_status') ?>',
+                    url: '<?= base_url('Camp/update_status') ?>',
                     method: 'POST',
                     data: {
                         status: status_new,

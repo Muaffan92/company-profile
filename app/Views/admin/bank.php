@@ -3,7 +3,7 @@
         Bank
     </div>
     <div class="ms-auto bg-white shadow me-5 rounded-3">
-        <a href="<?= base_url('BaseCamp/add_bank') ?>" class="btn badge text-success fw-bold">
+        <a href="<?= base_url('Camp/add_bank') ?>" class="btn badge text-success fw-bold">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
             </svg>
@@ -52,19 +52,19 @@
                                 ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('BaseCamp/edit_bank/' . $Bank['bank']) ?>" class="btn badge btn-warning rounded-pill">Edit</a>
+                                <a href="<?= base_url('Camp/edit_bank/' . $Bank['bank']) ?>" class="btn badge btn-warning rounded-pill">Edit</a>
                                 <?php
                                 if ($Bank['status'] == 2) {
                                 ?>
-                                    <a href="<?= base_url('BaseCamp/status_bank?bank=' . $Bank['bank']) ?>" class="btn badge btn-success rounded-pill">Open</a>
+                                    <a href="<?= base_url('Camp/status_bank?bank=' . $Bank['bank']) ?>" class="btn badge btn-success rounded-pill">Open</a>
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="<?= base_url('BaseCamp/status_bank/gangguan?bank=' . $Bank['bank']) ?>" class="btn badge btn-danger rounded-pill">Gangguan</a>
+                                    <a href="<?= base_url('Camp/status_bank/gangguan?bank=' . $Bank['bank']) ?>" class="btn badge btn-danger rounded-pill">Gangguan</a>
                                 <?php
                                 }
                                 ?>
-                                <a href="<?= base_url('BaseCamp/delete_bank/' . $Bank['bank']) ?>" class="btn badge btn-dark rounded-pill">Hapus</a>
+                                <a href="<?= base_url('Camp/delete_bank/' . $Bank['bank']) ?>" class="btn badge btn-dark rounded-pill">Hapus</a>
                             </td>
                         </tr>
                 <?php
@@ -103,7 +103,7 @@
             if (value) {
                 // AJAX
                 $.ajax({
-                    url: '<?= base_url('BaseCamp/status_bank?bank='); ?>' + $bank[1],
+                    url: '<?= base_url('Camp/status_bank?bank='); ?>' + $bank[1],
                     method: 'POST',
                     async: false,
                     success: function() {
