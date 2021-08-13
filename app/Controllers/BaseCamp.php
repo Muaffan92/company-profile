@@ -86,6 +86,6 @@ class BaseCamp extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(base_url('Home'));
+        return redirect()->to(base_url('BaseCamp'));
     }
 }
