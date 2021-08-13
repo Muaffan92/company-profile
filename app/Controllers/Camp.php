@@ -592,7 +592,7 @@ class Camp extends BaseController
 
             // MELAKUKAN TAMBAH AKTIFITAS
             if ($this->TableModels->getInsert('bank', $data)) {
-                return redirect()->to(base_url('BaseCamp/bank'));
+                return redirect()->to(base_url('Camp/bank'));
             }
         }
     }
@@ -659,7 +659,7 @@ class Camp extends BaseController
                 <p>No. Rekening yang anda masukan bukan angka!.</p>
               </div>');
 
-            return redirect()->to(base_url('BaseCamp/edit_bank'));
+            return redirect()->to(base_url('Camp/edit_bank'));
         } else {
             $bank_lama = $this->request->getPost('bank_lama');
             $bank = $this->request->getPost('nama_bank');
@@ -674,7 +674,7 @@ class Camp extends BaseController
 
             // MELAKUKAN TAMBAH AKTIFITAS
             if ($this->TableModels->getUpdate('bank', $data, ['bank' => $bank_lama])) {
-                return redirect()->to(base_url('BaseCamp/Bank'));
+                return redirect()->to(base_url('Camp/Bank'));
             }
         }
     }
@@ -722,7 +722,7 @@ class Camp extends BaseController
 
         // MELAKUAN TAMBAH KEGIATAN
         if ($this->TableModels->getUpdate('bank', $data, ['bank' => $bank])) {
-            return redirect()->to(base_url('BaseCamp/bank'));
+            return redirect()->to(base_url('Camp/bank'));
         }
     }
 
@@ -746,7 +746,7 @@ class Camp extends BaseController
 
         // MELAKUKAN TAMBAH AKTIFITAS
         if ($this->TableModels->getDelete('bank', ['bank' => $bank])) {
-            return redirect()->to(base_url('BaseCamp/bank'));
+            return redirect()->to(base_url('Camp/bank'));
         }
     }
     // END BANK
@@ -845,7 +845,7 @@ class Camp extends BaseController
                 <p>Modem sudah ada, silahkan masukan yang lain!.</p>
               </div>');
 
-            return redirect()->to(base_url('BaseCamp/add_center'));
+            return redirect()->to(base_url('Camp/add_center'));
         } else {
             // PENGECEKAN ANGKA
             if (!is_numeric($nomor_modem)) {
@@ -855,7 +855,7 @@ class Camp extends BaseController
                 <p>Harap gunakan angka saat memasukan nomor modem!.</p>
               </div>');
 
-                return redirect()->to(base_url('BaseCamp/add_center'));
+                return redirect()->to(base_url('Camp/add_center'));
             } else {
                 // DATA
                 $data = [
@@ -867,7 +867,7 @@ class Camp extends BaseController
 
                 // PROSES QUERY
                 if ($this->TableModels->getInsert('center', $data)) {
-                    return redirect()->to(base_url('BaseCamp/center'));
+                    return redirect()->to(base_url('Camp/center'));
                 }
             }
         }
@@ -988,7 +988,7 @@ class Camp extends BaseController
                 <p>Modem sudah ada, silahkan masukan yang lain!.</p>
               </div>');
 
-            return redirect()->to(base_url('BaseCamp/add_center'));
+            return redirect()->to(base_url('Camp/add_center'));
         } else {
             // PENGECEKAN ANGKA
             if (!is_numeric($nomor_modem)) {
@@ -998,7 +998,7 @@ class Camp extends BaseController
                 <p>Harap gunakan angka saat memasukan nomor modem!.</p>
               </div>');
 
-                return redirect()->to(base_url('BaseCamp/add_center'));
+                return redirect()->to(base_url('Camp/add_center'));
             } else {
                 // DATA
                 $data = [
@@ -1008,7 +1008,7 @@ class Camp extends BaseController
 
                 // PROSES QUERY
                 if ($this->TableModels->getUpdate('center', $data, ['id_modem' => $id])) {
-                    return redirect()->to(base_url('BaseCamp/center'));
+                    return redirect()->to(base_url('Camp/center'));
                 }
             }
         }
@@ -1065,7 +1065,7 @@ class Camp extends BaseController
 
         // PROSES
         if ($this->TableModels->getDelete('center', ['id_modem' => $id])) {
-            return redirect()->to(base_url('BaseCamp/center'));
+            return redirect()->to(base_url('Camp/center'));
         }
     }
     // END CENTER
@@ -1125,7 +1125,7 @@ class Camp extends BaseController
 
         // MELAKUKAN TAMBAH AKTIFITAS
         if ($this->TableModels->getInsert('help', $data)) {
-            return redirect()->to(base_url('BaseCamp/help'));
+            return redirect()->to(base_url('Camp/help'));
         }
     }
 
@@ -1187,7 +1187,7 @@ class Camp extends BaseController
 
         // MELAKUKAN TAMBAH AKTIFITAS
         if ($this->TableModels->getUpdate('help', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/help'));
+            return redirect()->to(base_url('Camp/help'));
         }
     }
 
@@ -1211,7 +1211,7 @@ class Camp extends BaseController
 
         // MELAKUKAN TAMBAH AKTIFITAS
         if ($this->TableModels->getDelete('help', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/help'));
+            return redirect()->to(base_url('Camp/help'));
         }
     }
     // END HELP
@@ -1303,7 +1303,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('cabang', $data)) {
-            return redirect()->to(base_url('BaseCamp/cabang'));
+            return redirect()->to(base_url('Camp/cabang'));
         }
     }
 
@@ -1389,7 +1389,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('cabang', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/cabang'));
+            return redirect()->to(base_url('Camp/cabang'));
         }
     }
 
@@ -1413,7 +1413,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('cabang', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/cabang'));
+            return redirect()->to(base_url('Camp/cabang'));
         }
     }
     // END CABANG
@@ -1481,7 +1481,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('jenis', $data)) {
-            return redirect()->to(base_url('BaseCamp/jenis'));
+            return redirect()->to(base_url('Camp/jenis'));
         }
     }
 
@@ -1549,7 +1549,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('jenis', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/jenis'));
+            return redirect()->to(base_url('Camp/jenis'));
         }
     }
 
@@ -1573,7 +1573,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('jenis', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/jenis'));
+            return redirect()->to(base_url('Camp/jenis'));
         }
     }
     // END JENIS
@@ -1634,7 +1634,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('keunggulan', $data)) {
-            return redirect()->to(base_url('BaseCamp/keunggulan'));
+            return redirect()->to(base_url('Camp/keunggulan'));
         }
     }
 
@@ -1697,7 +1697,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('keunggulan', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/keunggulan'));
+            return redirect()->to(base_url('Camp/keunggulan'));
         }
     }
 
@@ -1721,7 +1721,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('keunggulan', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/keunggulan'));
+            return redirect()->to(base_url('Camp/keunggulan'));
         }
     }
     // END KEUNGGULAN
@@ -1782,7 +1782,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('list_tipe', $data)) {
-            return redirect()->to(base_url('BaseCamp/list_tipe'));
+            return redirect()->to(base_url('Camp/list_tipe'));
         }
     }
 
@@ -1845,7 +1845,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('list_tipe', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/list_tipe'));
+            return redirect()->to(base_url('Camp/list_tipe'));
         }
     }
 
@@ -1869,7 +1869,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('list_tipe', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/list_tipe'));
+            return redirect()->to(base_url('Camp/list_tipe'));
         }
     }
     // END LIST TIPE
@@ -1937,7 +1937,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('menu', $data)) {
-            return redirect()->to(base_url('BaseCamp/menu'));
+            return redirect()->to(base_url('Camp/menu'));
         }
     }
 
@@ -1968,7 +1968,6 @@ class Camp extends BaseController
         $data = $this->TableModels->setData('menu', '*', ['id' => $id])->getRowArray();
 
         echo view('admin/Update/edit_menu', $data);
-        echo view('admin/Layouts/footer');
     }
 
     public function update_menu()
@@ -2006,7 +2005,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('menu', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/menu'));
+            return redirect()->to(base_url('Camp/menu'));
         }
     }
 
@@ -2030,7 +2029,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('menu', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/menu'));
+            return redirect()->to(base_url('Camp/menu'));
         }
     }
     // END MENU
@@ -2097,7 +2096,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('sosmed', $data)) {
-            return redirect()->to(base_url('BaseCamp/sosmed'));
+            return redirect()->to(base_url('Camp/sosmed'));
         }
     }
 
@@ -2166,7 +2165,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('sosmed', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/sosmed'));
+            return redirect()->to(base_url('Camp/sosmed'));
         }
     }
 
@@ -2190,7 +2189,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('sosmed', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/sosmed'));
+            return redirect()->to(base_url('Camp/sosmed'));
         }
     }
     // END SOSISAL MEDIA
@@ -2264,7 +2263,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('support', $data)) {
-            return redirect()->to(base_url('BaseCamp/support'));
+            return redirect()->to(base_url('Camp/support'));
         }
     }
 
@@ -2348,7 +2347,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('support', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/support'));
+            return redirect()->to(base_url('Camp/support'));
         }
     }
 
@@ -2376,7 +2375,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('support', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/support'));
+            return redirect()->to(base_url('Camp/support'));
         }
     }
     // END SUPPORT
@@ -2437,7 +2436,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('operator', $data)) {
-            return redirect()->to(base_url('BaseCamp/operator'));
+            return redirect()->to(base_url('Camp/operator'));
         }
     }
 
@@ -2500,7 +2499,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('operator', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/operator'));
+            return redirect()->to(base_url('Camp/operator'));
         }
     }
 
@@ -2524,7 +2523,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('operator', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/operator'));
+            return redirect()->to(base_url('Camp/operator'));
         }
     }
     // END OPERATOR
@@ -2592,7 +2591,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('kegiatan', $data)) {
-            return redirect()->to(base_url('BaseCamp/kegiatan'));
+            return redirect()->to(base_url('Camp/kegiatan'));
         }
     }
 
@@ -2674,7 +2673,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('kegiatan', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/kegiatan'));
+            return redirect()->to(base_url('Camp/kegiatan'));
         }
     }
 
@@ -2703,7 +2702,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('kegiatan', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/kegiatan'));
+            return redirect()->to(base_url('Camp/kegiatan'));
         }
     }
     // END KEGIATAN
@@ -2775,7 +2774,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('mitra', $data)) {
-            return redirect()->to(base_url('BaseCamp/mitra'));
+            return redirect()->to(base_url('Camp/mitra'));
         }
     }
 
@@ -2860,7 +2859,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('mitra', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/mitra'));
+            return redirect()->to(base_url('Camp/mitra'));
         }
     }
 
@@ -2889,7 +2888,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('mitra', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/mitra'));
+            return redirect()->to(base_url('Camp/mitra'));
         }
     }
     // END MITRA
@@ -2954,7 +2953,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('profesi', $data)) {
-            return redirect()->to(base_url('BaseCamp/profesi'));
+            return redirect()->to(base_url('Camp/profesi'));
         }
     }
 
@@ -3021,7 +3020,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('profesi', $data, ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/profesi'));
+            return redirect()->to(base_url('Camp/profesi'));
         }
     }
 
@@ -3045,7 +3044,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('profesi', ['id' => $id])) {
-            return redirect()->to(base_url('BaseCamp/profesi'));
+            return redirect()->to(base_url('Camp/profesi'));
         }
     }
     // END PROFESI
