@@ -3,7 +3,7 @@ if (!empty($getInfoHeader)) {
 ?>
     <section class="bg-primary">
         <div class="container pb-5 pt-3 pb-lg-0 pt-lg-0">
-            <div class="w-100 h-100 row">
+            <div class="w-100 h-100 row mt-5 mt-md-0">
                 <div class="col-lg-6 mt-lg-auto mt-auto pt-auto mb-auto">
                     <strong class="text-white fs-1"><?= $getInfoHeader['title'] ?></strong>
                     <div class="text-white-50 fs-5">
@@ -104,24 +104,24 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                 <!-- OPERATOR -->
                 <div class="bg-white p-4 rounded-4 d-flex justify-content-center mt-3 mb-3 shadow-lg border-notImportant border-20 border-dark">
                     <div class="d-flex align-items-start w-75">
-                        <div class="nav flex-column nav-pills me-3 h-100 d-block overflow-height" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div class="nav w-md-100 flex-column nav-pills me-3 h-100 d-block overflow-height" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <?php
                             $cek = 1;
                             foreach ($getOperator as $Operator) {
                                 if ($cek == 1) {
                             ?>
-                                    <button class="nav-link active" id="v-pills-<?= $Operator['operator'] ?>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<?= $Operator['operator'] ?>" type="button" role="tab" aria-controls="v-pills-<?= $Operator['operator'] ?>" aria-selected="true"><?= $Operator['operator'] ?></button>
+                                    <button class="nav-link col-6 col-lg active" id="v-pills-<?= $Operator['operator'] ?>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<?= $Operator['operator'] ?>" type="button" role="tab" aria-controls="v-pills-<?= $Operator['operator'] ?>" aria-selected="true"><?= $Operator['operator'] ?></button>
                                 <?php
                                 } else {
                                 ?>
-                                    <button class="nav-link" id="v-pills-<?= $Operator['operator'] ?>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<?= $Operator['operator'] ?>" type="button" role="tab" aria-controls="v-pills-<?= $Operator['operator'] ?>" aria-selected="false"><?= $Operator['operator'] ?></button>
+                                    <button class="nav-link col-6 col-lg" id="v-pills-<?= $Operator['operator'] ?>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<?= $Operator['operator'] ?>" type="button" role="tab" aria-controls="v-pills-<?= $Operator['operator'] ?>" aria-selected="false"><?= $Operator['operator'] ?></button>
                             <?php
                                 }
                                 $cek++;
                             }
                             ?>
                         </div>
-                        <div class="tab-content alert-info rounded-4 h-100 w-100 d-flex align-items-center" id="v-pills-tabContent">
+                        <div class="tab-content alert-info rounded-4 h-100 w-100 d-flex align-items-center pb-3 pb-md-0" id="v-pills-tabContent">
                             <?php
                             $cek2 = 1;
                             foreach ($getOperator as $Operator) {
@@ -151,7 +151,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                                 for ($jns = 0; $jns < count($tmp_jenis); $jns++) {
                                                                     if ($limit_jenis <= 12) {
                                                                 ?>
-                                                                        <div class="col-4 mt-3">
+                                                                        <div class="col-lg-4 col mt-3">
                                                                             <div class="card bg-white border-0">
                                                                                 <div class="card-body">
                                                                                     <?= $tmp_jenis[$jns]['jenis'] ?>
@@ -178,7 +178,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                                 for ($jns = $akhir_jenis + 1; $jns < count($tmp_jenis); $jns++) {
                                                                     if ($limit_jenis <= 12) {
                                                                 ?>
-                                                                        <div class="col-4 mt-3">
+                                                                        <div class="col-lg-4 col mt-3">
                                                                             <div class="card bg-white border-0">
                                                                                 <div class="card-body">
                                                                                     <?= $tmp_jenis[$jns]['jenis'] ?>
@@ -232,7 +232,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                                 for ($jns = 0; $jns < count($tmp_jenis); $jns++) {
                                                                     if ($limit_jenis <= 12) {
                                                                 ?>
-                                                                        <div class="col-4 mt-3">
+                                                                        <div class="col-lg-4 col mt-3">
                                                                             <div class="card bg-wite">
                                                                                 <div class="card-body">
                                                                                     <?= $tmp_jenis[$jns]['jenis'] ?>
@@ -259,7 +259,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                                 for ($jns = $akhir_jenis + 1; $jns < count($tmp_jenis); $jns++) {
                                                                     if ($limit_jenis <= 12) {
                                                                 ?>
-                                                                        <div class="col-4 mt-3">
+                                                                        <div class="col-lg-4 col mt-3">
                                                                             <div class="card bg-wite">
                                                                                 <div class="card-body">
                                                                                     <?= $tmp_jenis[$jns]['jenis'] ?>

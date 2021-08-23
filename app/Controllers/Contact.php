@@ -18,16 +18,18 @@ class Contact extends BaseController
             'menu' => 'contact',
             'header' => 'Contact Us',
             'getMenu' => $this->TableModels->setData('menu', '*', '', '', '', '', ['menu' => 'ASC'])->getResultArray(),
-            'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*', '', '', '', '', '')->getResultArray(),
-            'getSosmed' => $this->TableModels->setData('sosmed', '*', '', '', '', '', '')->getResultArray(),
+            'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*')->getResultArray(),
+            'getSosmed' => $this->TableModels->setData('sosmed', '*')->getResultArray(),
+            'getIklan' => $this->TableModels->setData('iklan', '*')->getResultArray(),
             'Modals' => $this->TableModels,
         ];
 
         $data = [
-            'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $layouts['menu']], '', '', '', '')->getRowArray(),
-            'getCabang' => $this->TableModels->setData('cabang', '*', '', '', '', '', '')->getResultArray(),
-            'getListTipe' => $this->TableModels->setData('list_tipe', '*', '', '', '', '', '')->getResultArray(),
-            'getBank' => $this->TableModels->setData('bank', '*', '', ['status' => ['0']], '', '', '')->getResultArray(),
+            'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $layouts['menu']])->getRowArray(),
+            'getCabangUtama' => $this->TableModels->setData('cabang', '*', ['kategori' => 'utama'])->getResultArray(),
+            'getCabang' => $this->TableModels->setData('cabang', '*', ['kategori' => 'cabang'])->getResultArray(),
+            'getListTipe' => $this->TableModels->setData('list_tipe', '*')->getResultArray(),
+            'getBank' => $this->TableModels->setData('bank', '*', '', ['status' => ['0']])->getResultArray(),
         ];
 
         echo view('company_profile/Help/Layouts/header', $layouts);

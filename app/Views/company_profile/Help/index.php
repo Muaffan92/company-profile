@@ -11,10 +11,10 @@ if (!empty($getInfoHeader)) {
                             <?= $getInfoHeader['ket'] ?>
                         </div>
                         <form action="" method="POST" class="row mt-4">
-                            <div class="col">
+                            <div class="col-12 col-lg">
                                 <input class="form-control rounded-pill" type="text" placeholder="Cari solusimu..">
                             </div>
-                            <div class="col-2">
+                            <div class="col-12 col-lg-2 mt-2 mt-md-0 d-flex justify-content-center d-md-block">
                                 <button type="submit" class="btn btn-success mb-3 rounded-pill">Search</button>
                             </div>
                         </form>

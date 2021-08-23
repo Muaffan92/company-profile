@@ -74,6 +74,7 @@ class BaseCamp extends BaseController
                     $data = [
                         'username' => $tmp_user['username'],
                         'name' => $tmp_user['name'],
+                        'tipe' => $tmp_user['tipe'],
                     ];
 
                     session()->set($data);

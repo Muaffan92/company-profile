@@ -41,3 +41,66 @@
             </div>
         </div>
     </nav>
+    <?php
+    if (!empty($getIklan)) {
+    ?>
+        <div class="bg-white h-15 top-15 start-0 fixed-top">
+            <div class="container">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php
+                        $jml_iklan = ceil(count($getIklan) / 1);
+                        // DATA TERAKHIR
+                        $end = 0;
+
+                        // MENAMPILKAN JUMLAH PEMBAGIAN
+                        for ($i = 0; $i < $jml_iklan; $i++) {
+                            // PENGECEKAN DATA PERTAMA
+                            if ($i == 0) {
+                        ?>
+                                <div class="carousel-item active">
+                                    <?php
+                                    // MEMBERIKAN LIMIT
+                                    $limit_iklan = 1;
+
+                                    for ($ikn = 0; $ikln < count($getIklan); $ikln++) {
+                                        if ($limit_iklan <= 1) {
+                                    ?>
+                                            <p class="lh-sm"><?= $getIklan[$ikln]['ket'] ?></p>
+                                    <?php
+                                            $end = $ikln;
+                                            $limit_iklan++;
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            <?php
+                            } else {
+                            ?>
+                                <div class="carousel-item">
+                                    <?php
+                                    // MEMBERIKAN LIMIT
+                                    $limit_iklan = 1;
+
+                                    for ($ikn = $end + 1; $ikln < count($getIklan); $ikln++) {
+                                        if ($limit_iklan <= 1) {
+                                    ?>
+                                            <p class="lh-sm"><?= $getIklan[$ikln]['ket'] ?></p>
+                                    <?php
+                                            $end = $ikln;
+                                            $limit_iklan++;
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
