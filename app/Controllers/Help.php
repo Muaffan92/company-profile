@@ -20,6 +20,7 @@ class Help extends BaseController
             'getMenu' => $this->TableModels->setData('menu', '*', '', '', '', '', '')->getResultArray(),
             'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*', '', '', '', '', '')->getResultArray(),
             'getSosmed' => $this->TableModels->setData('sosmed', '*', '', '', '', '', '')->getResultArray(),
+            'getIklan' => $this->TableModels->setData('iklan', '*')->getResultArray(),
         ];
 
         $data = [

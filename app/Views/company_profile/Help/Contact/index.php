@@ -22,40 +22,39 @@ if (!empty($getInfoHeader)) {
 <!-- CABANG -->
 <?php
 // PENGECEKAN DATA KOSONG
-if (!empty($getCabang)) {
+if ((!empty($getCabangUtama)) || (!empty($getCabang))) {
 ?>
     <section class="bg-white">
         <div class="container pb-5 pt-5">
             <div class="w-100 h-100 p-4">
                 <div class="row">
                     <?php
-                    foreach ($getCabang as $cabang) {
-                        // PENGECEKAN KATEGORI
-                        if ($cabang['kategori'] == 'utama') {
+                    if (!empty($getCabangUtama)) {
+                        foreach ($getCabangUtama as $CabangUtama) {
                     ?>
                             <div class="col-12">
                                 <div class="card mb-3 border-0">
                                     <div class="row g-0">
                                         <div class="col-md-5">
                                             <div class="card-body mt-3">
-                                                <h5 class="card-title fw-bold fs-4"><?= $cabang['nama'] ?></h5>
-                                                <h6 class="card-subtitle mb-2 text-muted"><?= $cabang['alamat'] ?></h6>
-                                                <p class="card-text mt-3"><?= $cabang['ket'] ?></p>
+                                                <h5 class="card-title fw-bold fs-4"><?= $CabangUtama['nama'] ?></h5>
+                                                <h6 class="card-subtitle mb-2 text-muted"><?= $CabangUtama['alamat'] ?></h6>
+                                                <p class="card-text mt-3"><?= $CabangUtama['ket'] ?></p>
                                                 <p class="card-text">
                                                     <small class="text-muted">
                                                         <ul class="list-group">
                                                             <?php
                                                             // MERUBAH STRING MENJADI ARRAY
-                                                            $dataNo = explode(',', $cabang['nomor_telepon']);
+                                                            $dataNoUtama = explode(',', $CabangUtama['nomor_telepon']);
 
-                                                            foreach ($dataNo as $no) {
+                                                            foreach ($dataNoUtama as $NoUtama) {
                                                             ?>
                                                                 <li class="list-group-item border-0">
-                                                                    <a href="tel:<?= $no ?>" class="text-decoration-none text-dark">
+                                                                    <a href="tel:<?= $NoUtama ?>" class="text-decoration-none text-dark">
                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
                                                                             <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                                                                         </svg>
-                                                                        <?= $no ?>
+                                                                        <?= $NoUtama ?>
                                                                     </a>
                                                                 </li>
                                                             <?php
@@ -66,14 +65,18 @@ if (!empty($getCabang)) {
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <div class="w-100 h-100"><?= $cabang['location'] ?></div>
+                                        <div class="col-md-7 col-12">
+                                            <div class="w-100 h-100"><?= $CabangUtama['location'] ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php
-                        } else {
+                        }
+                    }
+
+                    if (!empty($getCabang)) {
+                        foreach ($getCabang as $cabang) {
                         ?>
                             <div class="col-lg-6 mt-4">
                                 <div class="card rounded-4 h-100 shadow">
@@ -154,26 +157,49 @@ if (!empty($getListTipe)) {
 
                                                 if (!empty($tmp_center)) {
                                                     if ($limit_center <= 4) {
+                                                        if ($limit_center == 1) {
                                             ?>
-                                                        <div class="col-lg">
-                                                            <div class="card alert-info border-0 shadow-lg h-100">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
-                                                                    <div class="card-text">
-                                                                        <ul class="list-group">
-                                                                            <?php
-                                                                            foreach ($tmp_center as $Center) {
-                                                                            ?>
-                                                                                <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
-                                                                            <?php
-                                                                            }
-                                                                            ?>
-                                                                        </ul>
+                                                            <div class="col-lg">
+                                                                <div class="card alert-info border-0 shadow-lg h-100">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
+                                                                        <div class="card-text">
+                                                                            <ul class="list-group">
+                                                                                <?php
+                                                                                foreach ($tmp_center as $Center) {
+                                                                                ?>
+                                                                                    <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
+                                                                                <?php
+                                                                                }
+                                                                                ?>
+                                                                            </ul>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        <?php
+                                                        } else {
+                                                        ?>
+                                                            <div class="col-lg mt-3 mt-md-0">
+                                                                <div class="card alert-info border-0 shadow-lg h-100">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
+                                                                        <div class="card-text">
+                                                                            <ul class="list-group">
+                                                                                <?php
+                                                                                foreach ($tmp_center as $Center) {
+                                                                                ?>
+                                                                                    <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
+                                                                                <?php
+                                                                                }
+                                                                                ?>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                             <?php
+                                                        }
                                                         $end = $lst;
                                                         $limit_center++;
                                                     }
@@ -197,26 +223,49 @@ if (!empty($getListTipe)) {
 
                                                 if (!empty($tmp_center)) {
                                                     if ($limit_center <= 4) {
+                                                        if ($limit_center == 1) {
                                             ?>
-                                                        <div class="col-lg">
-                                                            <div class="card alert-info border-0 shadow-lg h-100">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
-                                                                    <div class="card-text">
-                                                                        <ul class="list-group">
-                                                                            <?php
-                                                                            foreach ($tmp_center as $Center) {
-                                                                            ?>
-                                                                                <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
-                                                                            <?php
-                                                                            }
-                                                                            ?>
-                                                                        </ul>
+                                                            <div class="col-lg">
+                                                                <div class="card alert-info border-0 shadow-lg h-100">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
+                                                                        <div class="card-text">
+                                                                            <ul class="list-group">
+                                                                                <?php
+                                                                                foreach ($tmp_center as $Center) {
+                                                                                ?>
+                                                                                    <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
+                                                                                <?php
+                                                                                }
+                                                                                ?>
+                                                                            </ul>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        <?php
+                                                        } else {
+                                                        ?>
+                                                            <div class="col-lg mt-3 mt-md-0">
+                                                                <div class="card alert-info border-0 shadow-lg h-100">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
+                                                                        <div class="card-text">
+                                                                            <ul class="list-group">
+                                                                                <?php
+                                                                                foreach ($tmp_center as $Center) {
+                                                                                ?>
+                                                                                    <li class="list-group-item bg-transparent border-0"><?= $Center['id_senter'] ?></li>
+                                                                                <?php
+                                                                                }
+                                                                                ?>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                             <?php
+                                                        }
                                                         $end = $lst;
                                                         $limit_center++;
                                                     }
@@ -279,17 +328,31 @@ if (!empty($getBank)) {
 
                                             for ($gtbnk = 0; $gtbnk < count($getBank); $gtbnk++) {
                                                 if ($limit_bank <= 4) {
+                                                    if ($limit_bank == 1) {
                                             ?>
-                                                    <div class="col-lg">
-                                                        <div class="card bg-white shadow border-0 shadow-lg h-100">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title fw-bold text-capitalize text-center text-dark"><?= $getBank[$gtbnk]['bank'] ?></h5>
-                                                                <h6 class="card-subtitle mb-2 text-muted"><?= $getBank[$gtbnk]['atas_nama'] ?></h6>
-                                                                <p class="card-text text-dark"><?= $getBank[$gtbnk]['no_rek'] ?></p>
+                                                        <div class="col-lg">
+                                                            <div class="card bg-white shadow border-0 shadow-lg h-100">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title fw-bold text-capitalize text-center text-dark"><?= $getBank[$gtbnk]['bank'] ?></h5>
+                                                                    <h6 class="card-subtitle mb-2 text-muted"><?= $getBank[$gtbnk]['atas_nama'] ?></h6>
+                                                                    <p class="card-text text-dark"><?= $getBank[$gtbnk]['no_rek'] ?></p>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    <?php
+                                                    } else {
+                                                    ?>
+                                                        <div class="col-lg mt-3 mt-md-0">
+                                                            <div class="card bg-white shadow border-0 shadow-lg h-100">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title fw-bold text-capitalize text-center text-dark"><?= $getBank[$gtbnk]['bank'] ?></h5>
+                                                                    <h6 class="card-subtitle mb-2 text-muted"><?= $getBank[$gtbnk]['atas_nama'] ?></h6>
+                                                                    <p class="card-text text-dark"><?= $getBank[$gtbnk]['no_rek'] ?></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                             <?php
+                                                    }
                                                     $end = $gtbnk;
                                                     $limit_bank++;
                                                 }
@@ -308,17 +371,31 @@ if (!empty($getBank)) {
 
                                             for ($gtbnk = $end + 1; $gtbnk < count($getBank); $gtbnk++) {
                                                 if ($limit_bank <= 4) {
+                                                    if ($limit_bank == 1) {
                                             ?>
-                                                    <div class="col-lg">
-                                                        <div class="card bg-white shadow border-0 shadow-lg h-100">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title fw-bold text-capitalize text-center text-dark"><?= $getBank[$gtbnk]['bank'] ?></h5>
-                                                                <h6 class="card-subtitle mb-2 text-muted"><?= $getBank[$gtbnk]['atas_nama'] ?></h6>
-                                                                <p class="card-text text-dark"><?= $getBank[$gtbnk]['no_rek'] ?></p>
+                                                        <div class="col-lg">
+                                                            <div class="card bg-white shadow border-0 shadow-lg h-100">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title fw-bold text-capitalize text-center text-dark"><?= $getBank[$gtbnk]['bank'] ?></h5>
+                                                                    <h6 class="card-subtitle mb-2 text-muted"><?= $getBank[$gtbnk]['atas_nama'] ?></h6>
+                                                                    <p class="card-text text-dark"><?= $getBank[$gtbnk]['no_rek'] ?></p>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    <?php
+                                                    } else {
+                                                    ?>
+                                                        <div class="col-lg mt-3 mt-md-0">
+                                                            <div class="card bg-white shadow border-0 shadow-lg h-100">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title fw-bold text-capitalize text-center text-dark"><?= $getBank[$gtbnk]['bank'] ?></h5>
+                                                                    <h6 class="card-subtitle mb-2 text-muted"><?= $getBank[$gtbnk]['atas_nama'] ?></h6>
+                                                                    <p class="card-text text-dark"><?= $getBank[$gtbnk]['no_rek'] ?></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                             <?php
+                                                    }
                                                     $end = $gtbnk;
                                                     $limit_bank++;
                                                 }

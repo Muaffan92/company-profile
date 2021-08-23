@@ -3,7 +3,7 @@ if (!empty($getInfoHeader)) {
 ?>
     <section class="bg-primary">
         <div class="container pb-5 pt-3 pb-lg-0 pt-lg-0">
-            <div class="w-100 h-100 row">
+            <div class="w-100 h-100 row mt-5 mt-md-0">
                 <div class="col-lg-6 mt-lg-auto mt-auto pt-auto mb-auto">
                     <strong class="text-white fs-1"><?= $getInfoHeader['title'] ?></strong>
                     <div class="text-white-50 fs-5">
@@ -44,7 +44,7 @@ if (!empty($getProfesi)) {
                                 for ($a = 0; $a < count($getProfesi); $a++) {
                                     if ($jml_limit_profesi <= 3) {
                                 ?>
-                                        <div class="col-6">
+                                        <div class="col-lg-6 col-12">
                                             <div class="card shadow">
                                                 <div class="card-body">
                                                     <h5 class="card-title fw-bold d-flex align-items-center text-capitalize">
@@ -76,7 +76,7 @@ if (!empty($getProfesi)) {
                                 for ($a = $limit_profesi + 1; $a < count($getProfesi); $a++) {
                                     if ($jml_limit_profesi <= 3) {
                                 ?>
-                                        <div class="col-4">
+                                        <div class="col-lg-6 col-12">
                                             <div class="card shadow">
                                                 <div class="card-body">
                                                     <h5 class="card-title fw-bold d-flex align-items-center text-capitalize">

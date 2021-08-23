@@ -21,6 +21,7 @@ class Home extends BaseController
 			'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*', '', '', '', '', '')->getResultArray(),
 			'getSosmed' => $this->TableModels->setData('sosmed', '*', '', '', '', '', '')->getResultArray(),
 			'Modals' => $this->TableModels,
+			'getIklan' => $this->TableModels->setData('iklan', '*')->getResultArray(),
 		];
 
 		$data = [

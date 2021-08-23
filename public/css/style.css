@@ -111,5 +111,32 @@
 }
 
 .border-notImportant {
-    border: 1px solid #dee2e6;
+  border: 1px solid #dee2e6;
+}
+
+.top-15 {
+  top: 15% !important;
+}
+
+/* PHONE */
+@media (max-width: 576px) {
+  .h-md-1 {
+    height: 120px !important;
+  }
+
+  .w-md-100 {
+    height: 100% !important;
+  }
+
+  .mt-md-n1 {
+    margin-top: -0.25rem !important;
+  }
+}
+
+/* DEKSTOP */
+
+@media (min-width: 960px) {
+  .fs-lg-5 {
+    font-size: 1.25rem !important;
+  }
 }
