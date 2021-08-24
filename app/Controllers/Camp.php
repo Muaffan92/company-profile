@@ -546,9 +546,15 @@ class Camp extends BaseController
 
         echo view('admin/Layouts/header', $header);
 
-        $data = [
-            'getUser' => $this->TableModels->setData('user', '*', ['username !=' => session()->get('username')])->getResultArray(),
-        ];
+        if (session()->get('tipe') == 'administrator') {
+            $data = [
+                'getUser' => $this->TableModels->setData('user', '*', ['username !=' => session()->get('username')])->getResultArray(),
+            ];
+        } else {
+            $data = [
+                'getUser' => $this->TableModels->setData('user', '*', ['username' => session()->get('username')])->getResultArray(),
+            ];
+        }
 
         echo view('admin/akun', $data);
         echo view('admin/Layouts/footer');
