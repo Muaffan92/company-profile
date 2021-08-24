@@ -547,7 +547,7 @@ class Camp extends BaseController
         echo view('admin/Layouts/header', $header);
 
         $data = [
-            'getUser' => $this->TableModels->setData('user', '*')->getResultArray(),
+            'getUser' => $this->TableModels->setData('user', '*', ['username !=' => session()->get('username')])->getResultArray(),
         ];
 
         echo view('admin/akun', $data);
@@ -3451,7 +3451,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('profesi', $data, ['id' => $id])) {
-            if ($this->TableModels->getInsert('aktifitas',$data_aktifitas)) {
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
                 return redirect()->to(base_url('Camp/profesi'));
             }
         }
@@ -3484,7 +3484,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('profesi', ['id' => $id])) {
-            if ($this->TableModels->getInsert('aktifitas',$data_aktifitas)) {
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
                 return redirect()->to(base_url('Camp/profesi'));
             }
         }
@@ -3588,8 +3588,8 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getInsert('user', $data)) {
-        if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
-            return redirect()->to(base_url('Camp/akun'));
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
+                return redirect()->to(base_url('Camp/akun'));
             }
         }
     }
@@ -3624,6 +3624,61 @@ class Camp extends BaseController
         ];
 
         echo view('admin/Update/edit_akun', $data);
+    }
+
+    public function update_user()
+    {
+        // VALIDASI LOGIN
+        if ((!session()->get('username')) || (!session()->get('name'))) {
+            // MEMUNCULKAN PESAN
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert">
+                    <div class="d-flex justify-content-center">
+                        <h5 class="fw-bold">Data Kosong</h3>
+                    </div>
+                    <hr class="mt-1 mb-1">
+                    <div class="text-wrap fs-7 mt-2">
+                        Harap masukan data yang di butuhkan.
+                    </div>
+                </div>');
+
+            return redirect()->to(base_url('BaseCamp'));
+        }
+
+        // INPUTAN VALUE
+        $username = $this->request->getPost('username');
+        $name = $this->request->getPost('name');
+        $password = $this->request->getPost('password');
+
+        $tmp_user = $this->TableModels->setData('user', '*', ['username' => session()->get('username')])->getRowArray();
+
+        // PENGECEKAN DATA
+        if (!empty($password)) {
+            // DATA
+        $data = [
+            'username' => $username,
+            'name' => $name,
+            'password' => $password,
+        ];
+        }else {
+            // DATA
+            $data = [
+                'username' => $username,
+                'name' => $name,
+            ];
+        }
+
+        $data_aktifitas = [
+            'date' => date('Y-m-d H:i:s'),
+            'username' => session()->get('username'),
+            'ket' => 'User ' . $tmp_user['username'] . ' merubah data dirinya',
+        ];
+
+        // PROSES QUERY
+        if ($this->TableModels->getUpdate('user', $data, ['username' => session()->get('username')])) {
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
+                return redirect()->to(base_url('BaseCamp/logout'));
+            }
+        }
     }
 
     public function update_akun()
@@ -3669,7 +3724,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getUpdate('user', $data, ['username' => $username_old])) {
-            if ($this->TableModels->getInsert('aktifitas',$data_aktifitas)) {
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
                 return redirect()->to(base_url('Camp/akun'));
             }
         }
@@ -3702,7 +3757,7 @@ class Camp extends BaseController
 
         // PROSES QUERY
         if ($this->TableModels->getDelete('user', ['username' => $username])) {
-            if ($this->TableModels->getInsert('aktifitas',$data_aktifitas)) {
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
                 return redirect()->to(base_url('Camp/akun'));
             }
         }
@@ -3712,7 +3767,8 @@ class Camp extends BaseController
     // AKTIFITAS
     public function select_aktifitas()
     {
-        if (!session()->get('name') && !session()->get('user')
+        if (
+            !session()->get('name') && !session()->get('user')
         ) {
             session()->setFlashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 						<i class="fas fa-exclamation-triangle"></i> <b>Warning!!</b>

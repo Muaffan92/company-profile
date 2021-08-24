@@ -24,10 +24,10 @@ class BaseCamp extends BaseController
         $password = $this->request->getPost('password');
 
         // MENGAMBIL DATA PADA DATABASE
-        $tmp_user = $this->TableModels->setData('user', '*', ['username' => $username, ''])->getRowArray();
+        $tmp_user = $this->TableModels->setData('user', '*', ['username' => $username])->getRowArray();
 
         // PENGECEKAN VALUE KOSONG
-        if ((empty($username)) && (empty($password))) {
+        if ((empty($username)) || (empty($password))) {
             // MEMUNCULKAN PESAN
             session()->setFlashdata('message', '<div class="alert alert-warning" role="alert">
                     <div class="d-flex justify-content-center">
