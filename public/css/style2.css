@@ -151,5 +151,11 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0;
+  width: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .w-lg-25 {
+    width: 25% !important;
+  }
 }

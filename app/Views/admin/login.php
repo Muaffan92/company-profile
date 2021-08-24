@@ -17,7 +17,7 @@
         <a href="<?= base_url('Home') ?>" class="btn position-absolute top-0 end-0 btn-close p-3"></a>
 
         <div class="d-flex align-items-center justify-content-center">
-            <div class="bg-white rounded-4 p-4 w-25">
+            <div class="bg-white rounded-4 p-4 col-lg-3 col-9">
                 <div class="d-flex align-items-center mb-3">
                     <a href="<?= base_url('Home') ?>" class="btn text-muted">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
