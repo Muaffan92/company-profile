@@ -44,7 +44,7 @@
     <?php
     if (!empty($getIklan)) {
     ?>
-        <div class="bg-white h-15 top-15 start-0 fixed-top">
+        <div class="bg-white h-15 top-55px start-0 fixed-top">
             <div class="container">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -63,7 +63,7 @@
                                     // MEMBERIKAN LIMIT
                                     $limit_iklan = 1;
 
-                                    for ($ikn = 0; $ikln < count($getIklan); $ikln++) {
+                                    for ($ikln = 0; $ikln < count($getIklan); $ikln++) {
                                         if ($limit_iklan <= 1) {
                                     ?>
                                             <p class="lh-sm"><?= $getIklan[$ikln]['ket'] ?></p>
@@ -82,7 +82,7 @@
                                     // MEMBERIKAN LIMIT
                                     $limit_iklan = 1;
 
-                                    for ($ikn = $end + 1; $ikln < count($getIklan); $ikln++) {
+                                    for ($ikln = $end + 1; $ikln < count($getIklan); $ikln++) {
                                         if ($limit_iklan <= 1) {
                                     ?>
                                             <p class="lh-sm"><?= $getIklan[$ikln]['ket'] ?></p>
