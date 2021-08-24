@@ -586,6 +586,38 @@ class Camp extends BaseController
         echo view('admin/aktifitas');
     }
 
+    public function iklan()
+    {
+        // VALIDASI LOGIN
+        if ((!session()->get('username')) || (!session()->get('name'))) {
+            // MEMUNCULKAN PESAN
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert">
+                    <div class="d-flex justify-content-center">
+                        <h5 class="fw-bold">Data Kosong</h3>
+                    </div>
+                    <hr class="mt-1 mb-1">
+                    <div class="text-wrap fs-7 mt-2">
+                        Harap masukan data yang di butuhkan.
+                    </div>
+                </div>');
+
+            return redirect()->to(base_url('BaseCamp'));
+        }
+
+        $header = [
+            'menu' => 'setting',
+        ];
+
+        echo view('admin/Layouts/header', $header);
+
+        $data = [
+            'getIklan' => $this->TableModels->setData('iklan', '*')->getResultArray(),
+        ];
+
+        echo view('admin/iklan', $data);
+        echo view('admin/Layouts/footer');
+    }
+
     // BANK
     public function add_bank()
     {
@@ -3660,12 +3692,12 @@ class Camp extends BaseController
         // PENGECEKAN DATA
         if (!empty($password)) {
             // DATA
-        $data = [
-            'username' => $username,
-            'name' => $name,
-            'password' => $password,
-        ];
-        }else {
+            $data = [
+                'username' => $username,
+                'name' => $name,
+                'password' => $password,
+            ];
+        } else {
             // DATA
             $data = [
                 'username' => $username,
@@ -3816,4 +3848,176 @@ class Camp extends BaseController
         echo json_encode($output);
     }
     // END AKTIFITAS
+
+    // IKLAN
+    public function add_iklan()
+    {
+        // VALIDASI LOGIN
+        if ((!session()->get('username')) || (!session()->get('name'))) {
+            // MEMUNCULKAN PESAN
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert">
+                    <div class="d-flex justify-content-center">
+                        <h5 class="fw-bold">Data Kosong</h3>
+                    </div>
+                    <hr class="mt-1 mb-1">
+                    <div class="text-wrap fs-7 mt-2">
+                        Harap masukan data yang di butuhkan.
+                    </div>
+                </div>');
+
+            return redirect()->to(base_url('BaseCamp'));
+        }
+
+        $header = [
+            'menu' => 'setting',
+        ];
+
+        echo view('admin/Layouts/header', $header);
+        echo view('admin/Add/tambah_iklan');
+        echo view('admin/Layouts/footer');
+    }
+
+    public function insert_iklan()
+    {
+        // VALIDASI LOGIN
+        if ((!session()->get('username')) || (!session()->get('name'))) {
+            // MEMUNCULKAN PESAN
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert">
+                    <div class="d-flex justify-content-center">
+                        <h5 class="fw-bold">Data Kosong</h3>
+                    </div>
+                    <hr class="mt-1 mb-1">
+                    <div class="text-wrap fs-7 mt-2">
+                        Harap masukan data yang di butuhkan.
+                    </div>
+                </div>');
+
+            return redirect()->to(base_url('BaseCamp'));
+        }
+
+        // INPUTAN VALUE
+        $ket = $this->request->getPost('ket');
+
+        // DATA
+        $data = [
+            'ket' => $ket,
+        ];
+
+        $data_aktifitas = [
+            'date' => date('Y-m-d H:i:s'),
+            'username' => session()->get('username'),
+            'ket' => 'Menambahkan iklan',
+        ];
+
+        // PROSES QUERY
+        if ($this->TableModels->getInsert('iklan', $data)) {
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
+                return redirect()->to(base_url('Camp/iklan'));
+            }
+        }
+    }
+
+    public function edit_iklan($id = '')
+    {
+        // VALIDASI LOGIN
+        if ((!session()->get('username')) || (!session()->get('name'))) {
+            // MEMUNCULKAN PESAN
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert">
+                    <div class="d-flex justify-content-center">
+                        <h5 class="fw-bold">Data Kosong</h3>
+                    </div>
+                    <hr class="mt-1 mb-1">
+                    <div class="text-wrap fs-7 mt-2">
+                        Harap masukan data yang di butuhkan.
+                    </div>
+                </div>');
+
+            return redirect()->to(base_url('BaseCamp'));
+        }
+
+        $header = [
+            'menu' => 'setting',
+        ];
+
+        echo view('admin/Layouts/header', $header);
+
+        $data = $this->TableModels->setData('iklan', '*', ['id' => $id])->getRowArray();
+
+        echo view('admin/Update/edit_iklan', $data);
+        echo view('admin/Layouts/footer');
+    }
+
+    public function update_iklan()
+    {
+        // VALIDASI LOGIN
+        if ((!session()->get('username')) || (!session()->get('name'))) {
+            // MEMUNCULKAN PESAN
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert">
+                    <div class="d-flex justify-content-center">
+                        <h5 class="fw-bold">Data Kosong</h3>
+                    </div>
+                    <hr class="mt-1 mb-1">
+                    <div class="text-wrap fs-7 mt-2">
+                        Harap masukan data yang di butuhkan.
+                    </div>
+                </div>');
+
+            return redirect()->to(base_url('BaseCamp'));
+        }
+
+        // INPUTAN VALUE
+        $id = $this->request->getPost('id');
+        $ket = $this->request->getPost('ket');
+
+        // DATA
+        $data = [
+            'ket' => $ket,
+        ];
+
+        $data_aktifitas = [
+            'date' => date('Y-m-d H:i:s'),
+            'username' => session()->get('username'),
+            'ket' => 'Merubah iklan',
+        ];
+
+        // PROSES QUERY
+        if ($this->TableModels->getUpdate('iklan', $data, ['id' => $id])) {
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
+                return redirect()->to(base_url('Camp/iklan'));
+            }
+        }
+    }
+
+    public function delete_iklan($id = '')
+    {
+        // VALIDASI LOGIN
+        if ((!session()->get('username')) || (!session()->get('name'))) {
+            // MEMUNCULKAN PESAN
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert">
+                    <div class="d-flex justify-content-center">
+                        <h5 class="fw-bold">Data Kosong</h3>
+                    </div>
+                    <hr class="mt-1 mb-1">
+                    <div class="text-wrap fs-7 mt-2">
+                        Harap masukan data yang di butuhkan.
+                    </div>
+                </div>');
+
+            return redirect()->to(base_url('BaseCamp'));
+        }
+
+        $data_aktifitas = [
+            'date' => date('Y-m-d H:i:s'),
+            'username' => session()->get('username'),
+            'ket' => 'Menghapus iklan',
+        ];
+
+        // PROSES QUERY
+        if ($this->TableModels->getDelete('iklan', ['id' => $id])) {
+            if ($this->TableModels->getInsert('aktifitas', $data_aktifitas)) {
+                return redirect()->to(base_url('Camp/iklan'));
+            }
+        }
+    }
+    // END IKLAN
 }
