@@ -44,7 +44,7 @@
     <?php
     if (!empty($getIklan)) {
     ?>
-        <div class="bg-white h-15 top-55px start-0 fixed-top">
+        <div class="alert-primary h-15 top-55px start-0 fixed-top">
             <div class="container">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
