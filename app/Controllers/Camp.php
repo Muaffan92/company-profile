@@ -2602,22 +2602,22 @@ class Camp extends BaseController
         helper('form');
 
         // INPUTAN VALUE
-        $operator = $this->request->getPost('operator');
+        $name = $this->request->getPost('name');
         $image = $this->request->getFile('gambar_operator');
 
         // MEMINDAHKAN GAMBAR
-        $image->move('img', $_FILES['gambar_operator']['name']);
+        $image->move('img', date('YmdHis') . $_FILES['gambar_operator']['name']);
 
         // DATA
         $data = [
-            'operator' => $operator,
+            'name' => $name,
             'image' => $image->getName(),
         ];
 
         $data_aktifitas = [
             'date' => date('Y-m-d H:i:s'),
             'username' => session()->get('username'),
-            'ket' => 'Menambahkan support ' . $operator,
+            'ket' => 'Menambahkan gambar ' . $name,
         ];
 
         // PROSES QUERY
@@ -2689,29 +2689,29 @@ class Camp extends BaseController
             $upload_image = $this->request->getFile('gambar_operator');
 
             // MEMINDAHKAN GAMBAR
-            $upload_image->move('img', $_FILES['gambar_operator']['name']);
+            $upload_image->move('img', date('YmdHis') . $_FILES['gambar_operator']['name']);
 
-            $image = $upload_image->getClientName();
+            $image = date('YmdHis').$upload_image->getClientName();
 
             unlink('img/' . $this->request->getPost('image_old'));
         }
 
         // INPUTAN VALUE
         $id = $this->request->getPost('id');
-        $operator = $this->request->getPost('operator');
+        $name = $this->request->getPost('name');
 
         $tmp_support = $this->TableModels->setData('support', '*', ['id' => $id])->getRowArray();
 
         // DATA
         $data = [
-            'operator' => $operator,
+            'name' => $name,
             'image' => $image,
         ];
 
         $data_aktifitas = [
             'date' => date('Y-m-d H:i:s'),
             'username' => session()->get('username'),
-            'ket' => 'Merubah support ' . $tmp_support['operator'],
+            'ket' => 'Merubah gambar ' . $tmp_support['name'],
         ];
 
         // PROSES QUERY
@@ -2747,7 +2747,7 @@ class Camp extends BaseController
         $data_aktifitas = [
             'date' => date('Y-m-d H:i:s'),
             'username' => session()->get('username'),
-            'ket' => 'Menghapus support ' . $tmp_support['operator'],
+            'ket' => 'Menghapus gambar ' . $tmp_support['name'],
         ];
 
         // PROSES QUERY

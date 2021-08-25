@@ -1,6 +1,6 @@
 <div class="mt-5 pt-4 d-flex align-items-center">
     <div class="p-2 fw-bold fs-4 text-dark ps-5">
-        Support
+        Image Operator
     </div>
 
     <div class="ms-auto bg-white shadow me-5 rounded-3">
@@ -17,7 +17,7 @@
         <table class="table-sm table table-hover text-capitalize" id="datatables">
             <thead>
                 <tr>
-                    <th>operator</th>
+                    <th>nama</th>
                     <th>image</th>
                     <th>aksi</th>
                 </tr>
@@ -28,7 +28,7 @@
                     foreach ($getSupport as $Support) {
                 ?>
                         <tr>
-                            <td><?= $Support['operator'] ?></td>
+                            <td><?= $Support['name'] ?></td>
                             <td>
                                 <img src="<?= base_url('img/' . $Support['image']) ?>" class="img-thumbnail" alt="<?= $Support['image'] ?>" width="70">
                             </td>

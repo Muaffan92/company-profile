@@ -12,28 +12,14 @@
 <div class="mt-4 bg-white p-4 text-dark">
     <?= session()->getFlashdata('message'); ?>
 
-    <img src="<?= base_url('img/' . $getSupport['image']) ?>" class="img-fluid mx-auto d-block rounded" alt="<?= $getSupport['operator'] ?>" width="300" height="300">
+    <img src="<?= base_url('img/' . $getSupport['image']) ?>" class="img-fluid mx-auto d-block rounded" alt="<?= $getSupport['name'] ?>" width="300" height="300">
 
     <form action="<?= base_url('Camp/update_support') ?>" method="POST" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
         <input type="hidden" name="id" value="<?= $getSupport['id'] ?>">
 
         <div class="col-md-6">
-            <label for="jenis" class="form-label">Operator</label>
-            <select class="form-select" aria-label="Default select example" name="operator" id="operator" required>
-                <option selected>--Pilih Operator--</option>
-                <?php
-                foreach ($getOperator as $Operator) {
-                    $getSupportOperator = $Modals->setData('support', 'operator', ['operator' => $Operator['operator'], 'operator !=' => $getSupport['operator']])->getRowArray();
-                    if (empty($getSupportOperator)) {
-                ?>
-                        <option value="<?= $Operator['operator'] ?>" <?php if ($Operator['operator'] == $getSupport['operator']) {
-                                                                            echo 'selected';
-                                                                        } ?>><?= $Operator['operator'] ?></option>
-                <?php
-                    }
-                }
-                ?>
-            </select>
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" value="<?= $getSupport['name'] ?>" required>
             <div class="invalid-feedback">
                 Form tidak boleh kosong
             </div>
