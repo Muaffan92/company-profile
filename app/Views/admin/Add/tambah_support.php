@@ -13,20 +13,8 @@
     <?= session()->getFlashdata('message'); ?>
     <form action="<?= base_url('Camp/insert_support') ?>" method="POST" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
-            <label for="jenis" class="form-label">Operator</label>
-            <select class="form-select" aria-label="Default select example" name="operator" id="operator" required>
-                <option selected>--Pilih Operator--</option>
-                <?php
-                foreach ($getOperator as $Operator) {
-                    $getSupport = $Modals->setData('support', 'operator',['operator'=>$Operator['operator']])->getRowArray();
-                        if (empty($getSupport)) {
-                ?>
-                            <option value="<?= $Operator['operator'] ?>"><?= $Operator['operator'] ?></option>
-                <?php
-                        }
-                }
-                ?>
-            </select>
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" required>
             <div class="invalid-feedback">
                 Form tidak boleh kosong
             </div>

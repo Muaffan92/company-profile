@@ -51,7 +51,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                 if ($jml_limit <= 6) {
                                             ?>
                                                     <div class="col d-flex align-items-center justify-content-center">
-                                                        <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="operator <?= $getSupport[$a]['operator'] ?>" class="d-block text-muted" width="100">
+                                                        <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block text-muted" width="100">
                                                     </div>
                                             <?php
                                                     $limit = $a;
@@ -72,7 +72,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                 if ($jml_limit <= 6) {
                                             ?>
                                                     <div class="col d-flex align-items-center justify-content-center">
-                                                        <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="operator <?= $getSupport[$a]['operator'] ?>" class="d-block text-muted" width="100">
+                                                        <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block text-muted" width="100">
                                                     </div>
                                             <?php
                                                     $limit = $a;
