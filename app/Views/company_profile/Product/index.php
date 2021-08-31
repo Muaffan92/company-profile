@@ -11,7 +11,7 @@ if (!empty($getInfoHeader)) {
                     </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block mt-5 pt-5 pb-5">
-                    <img src="<?= base_url('img/' . $getInfoHeader['image']) ?>" class="float-end h-100">
+                    <img src="<?= config('App')->tim . base_url('img/' . $getInfoHeader['image'] . '&h=500&z=1') ?>" class="float-end h-100">
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                 if ($jml_limit <= 6) {
                                             ?>
                                                     <div class="col d-flex align-items-center justify-content-center">
-                                                        <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block text-muted" width="100">
+                                                        <img src="<?= config('App')->tim . base_url('img/' . $getSupport[$a]['image'] . '&w=100&z=1') ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block text-muted">
                                                     </div>
                                             <?php
                                                     $limit = $a;
@@ -72,7 +72,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                                                 if ($jml_limit <= 6) {
                                             ?>
                                                     <div class="col d-flex align-items-center justify-content-center">
-                                                        <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block text-muted" width="100">
+                                                        <img src="<?= config('App')->tim . base_url('img/' . $getSupport[$a]['image'] . '&w=100&z=1') ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block text-muted">
                                                     </div>
                                             <?php
                                                     $limit = $a;
@@ -344,7 +344,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="<?= base_url('img/illustrasion11.png') ?>" class="img-fluid rounded-start h-100" alt="X-Metrik">
+                        <img src="<?=  config('App')->tim . base_url('img/illustrasion11.png&h=500&z=1') ?>" class="img-fluid rounded-start h-100" alt="X-Metrik">
                     </div>
                 </div>
             </div>
@@ -359,7 +359,7 @@ if ((!empty($getSupport) || (!empty($getOperator)))) {
             <div class="card mb-3 bg-transparent text-white border-0">
                 <div class="row g-0">
                     <div class="col-md-6">
-                        <img src="<?= base_url('img/illustrasion12.png') ?>" class="img-fluid rounded-start h-100" alt="Media Sosial">
+                        <img src="<?= config('App')->tim . base_url('img/illustrasion12.png&h=500&z=1') ?>" class="img-fluid rounded-start h-100" alt="Media Sosial">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">

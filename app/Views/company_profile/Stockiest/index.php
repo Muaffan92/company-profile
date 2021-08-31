@@ -11,7 +11,7 @@ if (!empty($getInfoHeader)) {
                     </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block mt-5 pt-5 pb-5">
-                    <img src="<?= base_url('img/' . $getInfoHeader['image']) ?>" class="float-end h-100">
+                    <img src="<?= config('App')->tim . base_url('img/' . $getInfoHeader['image'] . '&w=500&z=1') ?>" class="float-end h-100">
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@ if (!empty($getKeunggulan)) {
         <div class="card mb-3 bg-transparent text-white border-0">
             <div class="row g-0">
                 <div class="col-md-6">
-                    <img src="<?= base_url('img/illustrasion13.png') ?>" class="img-fluid rounded-start h-100" alt="Media Sosial">
+                    <img src="<?= config('App')->tim . base_url('img/illustrasion13.png&h=500&z=1') ?>" class="img-fluid rounded-start h-100" alt="Media Sosial">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
