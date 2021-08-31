@@ -17,7 +17,7 @@
                         </a>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block mt-5 pt-5">
-                        <img src="<?= base_url('img/' . $getInfoHeader['image']) ?>" class="float-end h-100">
+                        <img src="<?= config('App')->tim . base_url('img/' . $getInfoHeader['image'] . '&w=500&z=1') ?>" class="float-end h-100">
                     </div>
                 </div>
             </div>
@@ -295,7 +295,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 d-none d-lg-block">
-                                                    <img src="<?= base_url('img/' . $getMitra[$i]['image']) ?>" alt="Stockiest" class="w-100 h-100">
+                                                    <img src="<?= config('App')->tim . base_url('img/' . $getMitra[$i]['image'] . '&w=300&h=300&z=1') ?>" alt="Stockiest" class="w-100 h-100">
                                                 </div>
                                             </div>
                                         </div>
@@ -314,7 +314,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 d-none d-lg-block">
-                                                    <img src="<?= base_url('img/' . $getMitra[$i]['image']) ?>" alt="Stockiest" class="w-100 h-100">
+                                                    <img src="<?= config('App')->tim . base_url('img/' . $getMitra[$i]['image'] . '&w=300&h=300&z=1') ?>" alt="Stockiest" class="w-100 h-100">
                                                 </div>
                                             </div>
                                         </div>
@@ -371,7 +371,7 @@
                                                         if ($jml_limit <= 6) {
                                                     ?>
                                                             <div class="col d-flex align-items-center justify-content-center">
-                                                                <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block" width="100">
+                                                                <img src="<?= config('App')->tim . base_url('img/' . $getSupport[$a]['image'] . '&w=100&z=1') ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block">
                                                             </div>
                                                     <?php
                                                             $limit = $a;
@@ -392,7 +392,7 @@
                                                         if ($jml_limit <= 6) {
                                                     ?>
                                                             <div class="col d-flex align-items-center justify-content-center">
-                                                                <img src="<?= base_url('img/' . $getSupport[$a]['image']) ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block" width="100">
+                                                                <img src="<?= config('App')->tim . base_url('img/' . $getSupport[$a]['image'] . '&w=100&z=1') ?>" alt="<?= $getSupport[$a]['name'] ?>" class="d-block">
                                                             </div>
                                                     <?php
                                                             $limit = $a;
@@ -554,20 +554,20 @@
                                 if ($i <= 8) {
                                     if ($i == 0) {
                             ?>
-                                        <div class="col-4 col-lg-3 mt-4">
-                                            <img src="<?= base_url('img/' . $getKegiatan[$i]['image']) ?>" class="mx-auto d-block w-100 h-100">
+                                        <div class="col-4 col-lg-3 mt-4 mt-lg-0">
+                                            <img src="<?= config('App')->tim . base_url('img/'  . $getKegiatan[$i]['image'] . '&w=250&h=250&z=1') ?>" class="mx-auto d-block w-100 h-100">
                                         </div>
                                     <?php
                                     } elseif ($i <= 3) {
                                     ?>
                                         <div class="col-4 col-lg-3 mt-4 mt-lg-0">
-                                            <img src="<?= base_url('img/' . $getKegiatan[$i]['image']) ?>" class="mx-auto d-block w-100 h-100">
+                                            <img src="<?= config('App')->tim . base_url('img/'  . $getKegiatan[$i]['image'] . '&w=250&h=250&z=1') ?>" class="mx-auto d-block w-100 h-100">
                                         </div>
                                     <?php
                                     } else {
                                     ?>
                                         <div class="col-4 col-lg-3 mt-4">
-                                            <img src="<?= base_url('img/' . $getKegiatan[$i]['image']) ?>" class="mx-auto d-block w-100 h-100">
+                                            <img src="<?= config('App')->tim . base_url('img/'  . $getKegiatan[$i]['image'] . '&w=250&h=250&z=1') ?>" class="mx-auto d-block w-100 h-100">
                                         </div>
                             <?php
                                     }

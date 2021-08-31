@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Nikmati kemudahan dalam melakukan transaksi setiap harinya">
+    <meta name="keywords" content="pulsa,sub distribusi,xmetrik,x-metrik,transaksi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Admin</title>
@@ -15,7 +17,7 @@
 
 <body class="alert-info">
     <div class="d-flex position-relative">
-        <div class="navigation position-fixed bg-primary border-5 border-start border-primary top-0 bottom-0 start-0">
+        <div class="navigation position-fixed bg-primary border-5 border-start border-primary top-0 bottom-0 start-0 d-lg-block d-none w-md-0">
             <div class="text-center">
                 <img src="<?= base_url('img/xmetrik.png') ?>" class="rounded mt-4" alt="X-Metrik Payment" width="100" height="50">
             </div>
@@ -282,7 +284,7 @@
 
         <div class="main-content w-100 h-100">
             <!-- NAVBAR -->
-            <nav class="navbar navbar-expand fixed-top navbar-white bg-white position-fixed z-index-1 w-83" style="margin-left: 240px;">
+            <nav class="navbar navbar-expand fixed-top navbar-white bg-white position-fixed z-index-1 w-lg-83" style="margin-left: 240px;">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav">

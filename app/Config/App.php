@@ -24,6 +24,7 @@ class App extends BaseConfig
 	 * @var string
 	 */
 	public $baseURL = 'http://localhost/company/public/';
+	public $tim = 'http://localhost/company/timthumb.php?src=';
 
 	/**
 	 * --------------------------------------------------------------------------
