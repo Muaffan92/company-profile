@@ -1066,11 +1066,11 @@ class Camp extends BaseController
         // MENGAMBIL VALUE
         $id = $this->request->getPost('id');
 
-        $tmp_center = $this->TableModels->setData('center', '*', ['id_modem' => $id], '', '', '', '')->getRowArray();
+        $tmp_center = $this->TableModels->setData('center', '*', ['id_modem' => $id])->getRowArray();
 
         // DATA
         $data = [
-            'getCenter' => $this->TableModels->setData('center', '*', ['id_modem !=' => $id], '', '', '', '')->getResultArray(),
+            'getCenter' => $this->TableModels->setData('center', '*', ['id_modem !=' => $id])->getResultArray(),
             'tipe' => $tmp_center['tipe'],
         ];
 

@@ -67,7 +67,7 @@
                                 <tr>
                                     <td><?= $InfoHeader['menu'] ?></td>
                                     <td>
-                                        <img src="<?= $InfoHeader['image'] ?>" class="img-thumbnail">
+                                        <img src="<?= base_url('img/'. $InfoHeader['image']) ?>" class="img-thumbnail">
                                     </td>
                                     <td><?= $InfoHeader['title'] ?></td>
                                     <td><?= $InfoHeader['ket'] ?></td>

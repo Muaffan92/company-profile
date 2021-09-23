@@ -5,7 +5,7 @@
         </svg>
     </a>
     <div class="p-2 fw-bold fs-4 text-dark">
-        Tambah Support
+        Tambah Image
     </div>
 </div>
 

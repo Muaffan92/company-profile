@@ -45,7 +45,7 @@
 <script src="<?= base_url('js/javascript.js'); ?>"></script>
 <script src="<?= base_url('js/sweetalert.min.js'); ?>"></script>
 <script src="<?= base_url('fontawesome/js/all.min.js'); ?>"></script>
-<script src="<?= base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script src="<?= base_url('bootstrap/js/bootstrap.js'); ?>"></script>
 <script src="<?= base_url('DataTables/DataTables-1.10.24/js/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?= base_url('DataTables/DataTables-1.10.24/js/dataTables.bootstrap4.min.js'); ?>"></script>
 
@@ -57,6 +57,11 @@
 
         $('#datatables1').DataTable({
             "processing": true,
+        });
+
+        $('.hamburger').click(function(e) {
+            $('#sidebar').toggleClass('active')
+            $('.hamburger').toggleClass('start-active')
         });
     });
 

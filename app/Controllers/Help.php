@@ -17,15 +17,15 @@ class Help extends BaseController
         $layouts = [
             'menu' => 'bantuan',
             'header' => 'FAQ',
-            'getMenu' => $this->TableModels->setData('menu', '*', '', '', '', '', '')->getResultArray(),
-            'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*', '', '', '', '', '')->getResultArray(),
-            'getSosmed' => $this->TableModels->setData('sosmed', '*', '', '', '', '', '')->getResultArray(),
+            'getMenu' => $this->TableModels->setData('menu', '*')->getResultArray(),
+            'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*')->getResultArray(),
+            'getSosmed' => $this->TableModels->setData('sosmed', '*')->getResultArray(),
             'getIklan' => $this->TableModels->setData('iklan', '*')->getResultArray(),
         ];
 
         $data = [
             'getHelp' => $this->TableModels->setData('help', '*')->getResultArray(),
-            'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $layouts['menu']], '', '', '', '')->getRowArray(),
+            'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $layouts['menu']])->getRowArray(),
         ];
 
         echo view('company_profile/Layouts/header', $layouts);
