@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\TableModels;
 
-class Stockiest extends BaseController
+class Kegiatan extends BaseController
 {
     public function __construct()
     {
@@ -15,8 +15,8 @@ class Stockiest extends BaseController
     public function index()
     {
         $layouts = [
-            'menu' => 'agen',
-            'header'=>'Agen',
+            'menu' => 'kegiatan',
+            'header' => 'Kegiatan',
             'getMenu' => $this->TableModels->setData('menu', '*')->getResultArray(),
             'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*')->getResultArray(),
             'getSosmed' => $this->TableModels->setData('sosmed', '*')->getResultArray(),
@@ -25,13 +25,12 @@ class Stockiest extends BaseController
         ];
 
         $data = [
-			'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $layouts['menu']])->getRowArray(),
-            'getProfesi' => $this->TableModels->setData('profesi', '*')->getResultArray(),
-            'getKeunggulan' => $this->TableModels->setData('keunggulan', '*')->getResultArray(),
+            'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $layouts['menu']])->getRowArray(),
+            'getKegiatan' => $this->TableModels->setData('kegiatan', '*')->getResultArray(),
         ];
 
         echo view('company_profile/Layouts/header', $layouts);
-        echo view('company_profile/Stockiest/index', $data);
+        echo view('company_profile/Kegiatan/index', $data);
         echo view('company_profile/Layouts/footer');
     }
 }

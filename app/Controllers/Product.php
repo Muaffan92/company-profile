@@ -17,17 +17,17 @@ class Product extends BaseController
         $layouts = [
             'menu' => 'product',
             'header'=>'Product',
-            'getMenu' => $this->TableModels->setData('menu', '*', '', '', '', '', '')->getResultArray(),
-            'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*', '', '', '', '', '')->getResultArray(),
-            'getSosmed' => $this->TableModels->setData('sosmed', '*', '', '', '', '', '')->getResultArray(),
+            'getMenu' => $this->TableModels->setData('menu', '*')->getResultArray(),
+            'getKategoriMenu' => $this->TableModels->setData('kategori_menu', '*')->getResultArray(),
+            'getSosmed' => $this->TableModels->setData('sosmed', '*')->getResultArray(),
             'getIklan' => $this->TableModels->setData('iklan', '*')->getResultArray(),
             'Modals' => $this->TableModels,
         ];
 
         $data = [
-            'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $layouts['menu']], '', '', '', '')->getRowArray(),
-            'getSupport' => $this->TableModels->setData('support', '*', '', '', '', '', '')->getResultArray(),
-            'getOperator' => $this->TableModels->setData('operator', '*', '', '', '', '', '')->getResultArray(),
+            'getInfoHeader' => $this->TableModels->setData('info_header', '*', ['menu' => $layouts['menu']])->getRowArray(),
+            'getSupport' => $this->TableModels->setData('support', '*')->getResultArray(),
+            'getOperator' => $this->TableModels->setData('operator', '*')->getResultArray(),
         ];
 
         echo view('company_profile/Layouts/header', $layouts);

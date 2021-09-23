@@ -520,14 +520,14 @@
                         </div>
                     </div>
                     <div class="col-lg-4 d-none d-lg-block">
-                        <img src="<?= base_url('img/illustrasion4.png') ?>" alt="X-Metrik mobile" class="w-100 h-100">
+                        <img src="<?= config('App')->tim . base_url('img/illustrasion4.png&w=500&z=1') ?>" alt="X-Metrik mobile" class="w-100 h-100">
                     </div>
                 </div>
                 <!-- END X-METRIK MOBILE -->
 
                 <div class="row mt-4 ms-0 me-0">
                     <div class="col-lg-4 d-none d-lg-block">
-                        <img src="<?= base_url('img/illustrasion5.png') ?>" alt="X-Metrik H2h" class="w-100 h-100">
+                        <img src="<?= config('App')->tim . base_url('img/illustrasion5.png&w=500&z=1') ?>" alt="X-Metrik H2h" class="w-100 h-100">
                     </div>
                     <div class="col-lg-8 pe-0">
                         <div class="d-flex align-items-center bg-danger p-5 rounded-start-pill border-0 h-100">
@@ -575,7 +575,7 @@
                             }
                             ?>
                         </div>
-                        <a href="#">
+                        <a href="<?= base_url('Kegiatan') ?>">
                             <button class="btn btn-success rounded-pill mx-auto mt-4">Lihat semua kegiatan</button>
                         </a>
                     </div>
