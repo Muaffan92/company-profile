@@ -29,7 +29,7 @@
                                 <li class="nav-item me-4-lg">
                                     <a class="nav-link fw-bolder fs-6 text-capitalize <?php if ($menu == $Menu['menu']) {
                                                                                             echo 'active';
-                                                                                        } ?>" href="<?= $Menu['link'] ?>"><?= $Menu['menu'] ?></a>
+                                                                                        } ?>" href="<?= base_url($Menu['link']) ?>"><?= $Menu['menu'] ?></a>
                                 </li>
                     <?php
                             }

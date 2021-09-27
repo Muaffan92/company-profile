@@ -44,13 +44,13 @@ if (!empty($getHelp)) {
                             <div class="col-lg-6">
                                 <div class="card rounded-4">
                                     <div class="row g-0">
-                                        <div class="col-md-10">
+                                        <div class="col-lg-10 col">
                                             <div class="card-body">
                                                 <p class="card-text p-3"><?= $Help['help'] ?></p>
                                             </div>
                                         </div>
-                                        <div class="col-md-2 d-flex align-items-center">
-                                            <a href="<?= base_url('Help/' . $Help['id']) ?>" class="text-decoration-none btn">
+                                        <div class="col-lg-2 col-3 d-flex align-items-center">
+                                            <a href="<?= base_url('Help/solusi/' . $Help['id']) ?>" class="text-decoration-none btn">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                                                 </svg>
@@ -65,12 +65,12 @@ if (!empty($getHelp)) {
                             <div class="col-lg-6 mt-4">
                                 <div class="card rounded-4">
                                     <div class="row g-0">
-                                        <div class="col-md-10">
+                                        <div class="col-lg-10 col">
                                             <div class="card-body">
                                                 <p class="card-text p-3"><?= $Help['help'] ?></p>
                                             </div>
                                         </div>
-                                        <div class="col-md-2 d-flex align-items-center">
+                                        <div class="col-lg-2 col-3 d-flex align-items-center">
                                             <a href="<?= base_url('Help/' . $Help['id']) ?>" class="text-decoration-none btn">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
