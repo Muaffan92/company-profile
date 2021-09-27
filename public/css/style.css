@@ -29,6 +29,10 @@
   height: 45px;
 }
 
+.h-35 {
+  height: 35% !important;
+}
+
 .fs-7 {
   font-size: 0.85rem !important;
 }
