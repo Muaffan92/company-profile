@@ -163,7 +163,7 @@ if (!empty($getListTipe)) {
                                                                 <div class="card alert-info border-0 shadow-lg h-100">
                                                                     <div class="card-body">
                                                                         <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
-                                                                        <div class="card-text">
+                                                                        <div class="card-text overflow-auto h-35">
                                                                             <ul class="list-group">
                                                                                 <?php
                                                                                 foreach ($tmp_center as $Center) {
@@ -184,7 +184,7 @@ if (!empty($getListTipe)) {
                                                                 <div class="card alert-info border-0 shadow-lg h-100">
                                                                     <div class="card-body">
                                                                         <h5 class="card-title fw-bold text-capitalize text-center"><?= $getListTipe[$lst]['nama_tipe'] ?></h5>
-                                                                        <div class="card-text">
+                                                                        <div class="card-text overflow-auto h-35">
                                                                             <ul class="list-group">
                                                                                 <?php
                                                                                 foreach ($tmp_center as $Center) {
